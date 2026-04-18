@@ -65,20 +65,21 @@ public class Movimiento: MonoBehaviour
             enSuelo = false;
             Debug.Log("Estas saltando");
         }
-	    //animaciones
-	    if(!enSuelo)
-	    {
-	    	animator.Play("Jump");
-	    }
-	    else if (movimientoX != 0)
-	    {
-	    	animator.Play ("Walk");
-	    }
-	    else
-	    {
-	    	animator.Play("Idle");
-	    }
-      
+        //animaciones
+        //if (!enSuelo)
+        //{
+        // animator.Play("Jump");
+        //}
+        //else if (movimientoX != 0)
+        //{
+        //animator.Play("Walk");
+        //}
+        //else
+        //{
+        //animator.Play("Idle");
+        //}
+
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -162,7 +163,7 @@ public class Movimiento: MonoBehaviour
 	}
 	void ActualizarPuntos()
 	{
-		textoPuntos.text = "Slime" +slime;
+	//	textoPuntos.text = "Slime" +slime;
 	}
     void OnCollisionExit2D(Collision2D collision)
     {

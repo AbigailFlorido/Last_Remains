@@ -759,6 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CamaraSeguir
   jugador: {fileID: 1362936159}
+  offsetY: 7
   speed: 5
 --- !u!114 &800028633
 MonoBehaviour:

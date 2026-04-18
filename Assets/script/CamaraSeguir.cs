@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class CamaraSeguir : MonoBehaviour
 {
     public Transform jugador;

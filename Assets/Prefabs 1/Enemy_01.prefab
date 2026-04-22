@@ -192,6 +192,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.67}
   m_EdgeRadius: 0
+--- !u!1 &3699622737500510544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5399858836444552910}
+  m_Layer: 0
+  m_Name: PuntoSuelo
+  m_TagString: puntoSuelo
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5399858836444552910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699622737500510544}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.114, y: -0.897, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7881620155049589432}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4169046799284736148
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +257,7 @@ Transform:
   m_Children:
   - {fileID: 3194706326086685094}
   - {fileID: 7831834281454334193}
+  - {fileID: 5399858836444552910}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &6781361578462141194
@@ -254,7 +286,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2278391672195161685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -313,3 +345,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c87bb84f706404ab2ce73d73ce7dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemigo
+  velocidad: 2
+  distanciaVision: 5
+  player: {fileID: 0}
+  puntoSuelo: {fileID: 5399858836444552910}
+  distanciaSuelo: 0.5
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 64

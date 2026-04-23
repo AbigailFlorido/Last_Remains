@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: b9e18fb2e5d32394e857a11a54bac241
+guid: cba78dae4087eeb4dbb158b6cd2a1187
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5513050994037168576
-    second: pixil-frame-0 (3)_0
+      213: -4516652317179807460
+    second: Nubes base sin loop_0
   - first:
-      213: 2913723192658514240
-    second: pixil-frame-0 (3)_1
+      213: 7470909311157342405
+    second: Nubes base sin loop_1
+  - first:
+      213: -6660402631983326144
+    second: Nubes base sin loop_2
+  - first:
+      213: -4501978589679195236
+    second: Nubes base sin loop_3
+  - first:
+      213: 4109817418319028623
+    second: Nubes base sin loop_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,13 +52,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (3)_0
+      name: Nubes base sin loop_0
       rect:
         serializedVersion: 2
-        x: 623
-        y: 6785
-        width: 80
-        height: 80
+        x: 75
+        y: 775
+        width: 694
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 046eccf8455bd73b0800000000000000
-      internalID: -5513050994037168576
+      spriteID: c197d84d5a0a151c0800000000000000
+      internalID: -4516652317179807460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (3)_1
+      name: Nubes base sin loop_1
       rect:
         serializedVersion: 2
-        x: 3353
-        y: 389
-        width: 3668
-        height: 9128
+        x: 1019
+        y: 859
+        width: 622
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +162,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0415a306ecf9f6820800000000000000
-      internalID: 2913723192658514240
+      spriteID: 5c011b89f600ea760800000000000000
+      internalID: 7470909311157342405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nubes base sin loop_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 575
+        width: 306
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c9e83381f7193a0800000000000000
+      internalID: -6660402631983326144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nubes base sin loop_3
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 603
+        width: 646
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9be1cf3352c581c0800000000000000
+      internalID: -4501978589679195236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nubes base sin loop_4
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 627
+        width: 638
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f816e9eca21090930800000000000000
+      internalID: 4109817418319028623
       vertices: []
       indices: 
       edges: []
@@ -163,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixil-frame-0 (3)_0: -5513050994037168576
-      pixil-frame-0 (3)_1: 2913723192658514240
+      Nubes base sin loop_0: -4516652317179807460
+      Nubes base sin loop_1: 7470909311157342405
+      Nubes base sin loop_2: -6660402631983326144
+      Nubes base sin loop_3: -4501978589679195236
+      Nubes base sin loop_4: 4109817418319028623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

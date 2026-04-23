@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ea11d567781f7dc469e7a5493685e9c4
+guid: 128283cea72d627499869f059f1454f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6848064077537546469
-    second: IMG_3705_0
+      213: 7767738432604204985
+    second: Cielo base sin loop_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_3705_0
+      name: Cielo base sin loop_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7680
+        width: 1920
         height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1fe24b010ac6f0a0800000000000000
-      internalID: -6848064077537546469
+      spriteID: 9bfe58ff2fc8ccb60800000000000000
+      internalID: 7767738432604204985
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_3705_0: -6848064077537546469
+      Cielo base sin loop_0: 7767738432604204985
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

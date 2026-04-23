@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 186fefb766a21d54988bd86ddda6daf5
+guid: 9d0a6a5a17c463141bc249a1e9567b87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2843781530251400542
-    second: IMG_3716_0
+      213: -7980861803625020855
+    second: Nubes base sin loop 1_0
+  - first:
+      213: 339612477973989188
+    second: Nubes base sin loop 1_1
+  - first:
+      213: -4316873680967571641
+    second: Nubes base sin loop 1_2
+  - first:
+      213: 5987210917830950381
+    second: Nubes base sin loop 1_3
+  - first:
+      213: -6195621668355143641
+    second: Nubes base sin loop 1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_3716_0
+      name: Nubes base sin loop 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 7680
-        height: 72
+        x: 75
+        y: 775
+        width: 694
+        height: 198
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2aa6c86e3cbd888d0800000000000000
-      internalID: -2843781530251400542
+      spriteID: 942827959784e3190800000000000000
+      internalID: -7980861803625020855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nubes base sin loop 1_1
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 859
+        width: 622
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4470ee6dfbb86b400800000000000000
+      internalID: 339612477973989188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nubes base sin loop 1_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 575
+        width: 306
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747e1b942426714c0800000000000000
+      internalID: -4316873680967571641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nubes base sin loop 1_3
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 603
+        width: 646
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded77a0bb98d61350800000000000000
+      internalID: 5987210917830950381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nubes base sin loop 1_4
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 627
+        width: 638
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7288afe1beab40aa0800000000000000
+      internalID: -6195621668355143641
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d9b732d992ed3094f9186792cfc71323
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_3716_0: -2843781530251400542
+      Nubes base sin loop 1_0: -7980861803625020855
+      Nubes base sin loop 1_1: 339612477973989188
+      Nubes base sin loop 1_2: -4316873680967571641
+      Nubes base sin loop 1_3: 5987210917830950381
+      Nubes base sin loop 1_4: -6195621668355143641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

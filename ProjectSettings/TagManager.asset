@@ -48,5 +48,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG0
+    uniqueID: 2621440527
+    locked: 0
+  - name: BG1
+    uniqueID: 3774704587
+    locked: 0
+  - name: BG2
+    uniqueID: 2185420791
+    locked: 0
+  - name: Tile
+    uniqueID: 2377946627
+    locked: 0
+  - name: Elementos
+    uniqueID: 1679966445
+    locked: 0
+  - name: Enemies
+    uniqueID: 1145611319
+    locked: 0
+  - name: Player
+    uniqueID: 1983639803
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -84,19 +84,19 @@ public class Movimiento: MonoBehaviour
             fuenteDeAudio.PlayOneShot(sonidoSalto);
             Debug.Log("Estas saltando");
         }
-        //animaciones
-        //if (!enSuelo)
-        //{
-        // animator.Play("Jump");
-        //}
-        //else if (movimientoX != 0)
-        //{
-        //animator.Play("Walk");
-        //}
-        //else
-        //{
-        //animator.Play("Idle");
-        //}
+	    //animaciones
+        if (!enSuelo)
+        {
+         animator.Play("Jump");
+        }
+        else if (movimientoX != 0)
+        {
+        animator.Play("Walk");
+        }
+        else
+        {
+        animator.Play("Idle");
+        }
 
 
     }

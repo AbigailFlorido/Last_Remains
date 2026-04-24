@@ -33,6 +33,14 @@ public class Movimiento: MonoBehaviour
 	private Animator animator;
 	
     private SpriteRenderer spriteRenderer;
+
+	//Añadir sonidos
+
+	public AudioClip sonidoMoneda;
+	public AudioClip sonidoDano;
+	public AudioClip sonidoSalto;
+	private AudioSource fuenteDeAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +49,14 @@ public class Movimiento: MonoBehaviour
 	    animator = GetComponent<Animator>();
 	    colorOriginal = spriteRenderer.color;
 	    ActualizarPuntos();
+
+
+		//Añadile AudioSource
+		fuenteDeAudio = GetComponent<AudioSource>();
+		if (fuenteDeAudio == null)
+		{
+			fuenteDeAudio = gameObject.AddComponent<AudioSource>();
+		}
     }
 
     // Update is called once per frame
@@ -48,10 +64,11 @@ public class Movimiento: MonoBehaviour
     {
         float movimientoX = Input.GetAxis("Horizontal");
         // se utiliza flotante porque no son enteros
-        transform.Translate(movimientoX * velocidad * Time.deltaTime, 0f,0f);
+        //transform.Translate(movimientoX * velocidad * Time.deltaTime, 0f,0f);
         //translate es para mover
 
-        if(movimientoX > 0)
+        rb.linearVelocity = new Vector2(movimientoX * velocidad, rb.linearVelocity.y);
+        if (movimientoX > 0)
         {
             spriteRenderer.flipX = false;
         }
@@ -63,6 +80,8 @@ public class Movimiento: MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
             enSuelo = false;
+            //Añadir Sonido
+            fuenteDeAudio.PlayOneShot(sonidoSalto);
             Debug.Log("Estas saltando");
         }
         //animaciones
@@ -93,6 +112,8 @@ public class Movimiento: MonoBehaviour
 		    slime = slime + 1;
 		    ActualizarPuntos();
 		    Debug.Log("Tienes: "+slime);
+			//Añadir Sonido
+			fuenteDeAudio.PlayOneShot(sonidoMoneda);
 		    Destroy(other.gameObject);
         }
 	    if(other.tag == ("eskeleton") && vidas > 0)
@@ -114,7 +135,9 @@ public class Movimiento: MonoBehaviour
 	    {
 	    	recibiendoDano = true;
 	    	spriteRenderer.color = Color.red;
-	    	float direccionEmpuje = spriteRenderer.flipX ? 1f : -1f;
+        //Añadir Sonido
+        fuenteDeAudio.PlayOneShot(sonidoDano);
+        float direccionEmpuje = spriteRenderer.flipX ? 1f : -1f;
 	    	rb.linearVelocity = new Vector2 (direccionEmpuje * fuerzaEmpujeX, fuerzaEmpujeY);
 	    	Invoke("VolverANormal", tiempoDano);
 	    }

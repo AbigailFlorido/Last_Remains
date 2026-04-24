@@ -13,11 +13,20 @@ public class Enemigo : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private int direccion = 1;
     private float tiempoEspera = 0f;
+
+    public AudioClip sonidoAplastado;
+    private AudioSource fuenteDeAudio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        //Añadile AudioSource
+        fuenteDeAudio = GetComponent<AudioSource>();
+        if (fuenteDeAudio == null)
+        {
+            fuenteDeAudio = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
@@ -57,7 +66,9 @@ public class Enemigo : MonoBehaviour
     }
 	public void Morir ()
 	{
-		Destroy(gameObject);
+        //fuenteDeAudio.PlayOneShot(sonidoAplastado);
+        AudioSource.PlayClipAtPoint(sonidoAplastado, transform.position);
+        Destroy(gameObject);
 	}
     private void OnDrawGizmosSelect()
     {

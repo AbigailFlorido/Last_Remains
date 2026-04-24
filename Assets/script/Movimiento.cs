@@ -12,7 +12,7 @@ public class Movimiento: MonoBehaviour
     private Rigidbody2D rb;
     // rb es el nombre
 	private bool enSuelo = true;
-	
+
 	public int slime;
 	public int vidas = 3;
 	

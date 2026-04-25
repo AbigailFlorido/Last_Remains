@@ -45,6 +45,35 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Cielo
+    uniqueID: 3882552361
+    locked: 0
+  - name: Nubes
+    uniqueID: 2911502127
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Arboles
+    uniqueID: 915519785
+    locked: 0
+  - name: Arbustos
+    uniqueID: 844878149
+    locked: 0
+  - name: Casas
+    uniqueID: 2355859265
+    locked: 0
+  - name: Interactuables
+    uniqueID: 167529435
+    locked: 0
+  - name: Enemigos
+    uniqueID: 3846621975
+    locked: 0
+  - name: Player
+    uniqueID: 3537268777
+    locked: 0
+  - name: Ground
+    uniqueID: 132658887
+    locked: 0
+  m_RenderingLayers:
+  - Default

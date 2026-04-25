@@ -82,7 +82,8 @@ public class Movimiento: MonoBehaviour
             enSuelo = false;
             //Añadir Sonido
             fuenteDeAudio.PlayOneShot(sonidoSalto);
-            Debug.Log("Estas saltando");
+	        Debug.Log("Estas saltando");
+	        Debug.Log("Esta sonando");
         }
 	    //animaciones
         if (!enSuelo)

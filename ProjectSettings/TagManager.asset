@@ -48,8 +48,14 @@ TagManager:
   - name: Cielo
     uniqueID: 3882552361
     locked: 0
+  - name: OpacidadSky
+    uniqueID: 1059929379
+    locked: 0
   - name: Nubes
     uniqueID: 2911502127
+    locked: 0
+  - name: OpacidadNubes
+    uniqueID: 3042901377
     locked: 0
   - name: Default
     uniqueID: 0
@@ -60,8 +66,14 @@ TagManager:
   - name: Arbustos
     uniqueID: 844878149
     locked: 0
+  - name: OpacidadArboles
+    uniqueID: 126324157
+    locked: 0
   - name: Casas
     uniqueID: 2355859265
+    locked: 0
+  - name: OpacidadCasas
+    uniqueID: 2869277091
     locked: 0
   - name: Interactuables
     uniqueID: 167529435

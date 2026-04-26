@@ -14,11 +14,8 @@ public class Movimiento: MonoBehaviour
 	private bool enSuelo = true;
 
 	public int slime;
-	public int vidas = 3;
+	public int vidas = 5;
 	
-	public Image heart;
-	public Image heart1;
-	public Image heart2;
 	
 	public TMP_Text textoPuntos;
 	
@@ -119,7 +116,7 @@ public class Movimiento: MonoBehaviour
         }
 	    if(other.tag == ("eskeleton") && vidas > 0)
 	    {
-		    QuitarVida();	
+		    //QuitarVida();	
 	    	RecibirDano();
 	    }
 	    if(other.CompareTag("Cabeza_enemigo"))
@@ -132,17 +129,28 @@ public class Movimiento: MonoBehaviour
 	    	}
 	    }
     }
-	    void RecibirDano()
-	    {
-	    	recibiendoDano = true;
-	    	spriteRenderer.color = Color.red;
-        //Añadir Sonido
+    void RecibirDano()
+    {
+        if (recibiendoDano) return; 
+
+        vidas--; 
+
+        recibiendoDano = true;
+        spriteRenderer.color = Color.red;
         fuenteDeAudio.PlayOneShot(sonidoDano);
+
         float direccionEmpuje = spriteRenderer.flipX ? 1f : -1f;
-	    	rb.linearVelocity = new Vector2 (direccionEmpuje * fuerzaEmpujeX, fuerzaEmpujeY);
-	    	Invoke("VolverANormal", tiempoDano);
-	    }
-	void VolverANormal()
+        rb.linearVelocity = new Vector2(direccionEmpuje * fuerzaEmpujeX, fuerzaEmpujeY);
+
+        if (vidas <= 0)
+        {
+            Debug.Log("Game Over");
+            Invoke("ReiniciarNivel", 0.5f);
+        }
+
+        Invoke("VolverANormal", tiempoDano);
+    }
+    void VolverANormal()
 	{
 		recibiendoDano = false;
 		spriteRenderer.color = colorOriginal;
@@ -163,28 +171,10 @@ public class Movimiento: MonoBehaviour
 	    {
 	    	Debug.Log("Recibiste dano");
 	    	RecibirDano();
-	    	QuitarVida();
+	    	//QuitarVida();
 	    }
     }
-	public void QuitarVida()
-	{
-		vidas--;
-		Debug.Log("Te ha atacado el eskeleton");
-		if (vidas == 2)
-		{
-			heart2.enabled = false;
-		}
-		else if (vidas == 1)
-		{
-			heart1.enabled = false;
-		}
-		else if (vidas == 0)
-		{
-			heart.enabled = false;
-			Debug.Log("Game over");
-			Invoke("ReiniciarNivel", 0.5f);
-		}
-	}
+	
 	void ActualizarPuntos()
 	{
 	//	textoPuntos.text = "Slime" +slime;

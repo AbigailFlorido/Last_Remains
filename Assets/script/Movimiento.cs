@@ -8,7 +8,7 @@ public class Movimiento: MonoBehaviour
 {
     public float velocidad = 7f;
     //No importa tanto el valor de aqu� pero si es importante el punto y coma de esta parte
-    public float fuerzaSalto = 7f;
+    public float fuerzaSalto = 5.5f;
     private Rigidbody2D rb;
     // rb es el nombre
 	private bool enSuelo = true;

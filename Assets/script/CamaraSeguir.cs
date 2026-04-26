@@ -5,7 +5,8 @@ public class CamaraSeguir : MonoBehaviour
 {
     public Transform jugador;
     public float speed = 10.0f;
-	public float offsetY = 2.08f;
+	public float offsetY = 2.8f;
+	public float offsetX = 3.79f;
     
 	//Efecto parallax
 	//Arrastramos los fondos que tengamos
@@ -22,7 +23,7 @@ public class CamaraSeguir : MonoBehaviour
     void Update()
 	{
 		//Sigue al jugador
-        Vector3 destino = new Vector3 (jugador.position.x, jugador.position.y + offsetY, transform.position.z);
+		Vector3 destino = new Vector3 (jugador.position.x + offsetX, jugador.position.y + offsetY, transform.position.z);
 		transform.position = Vector3.Lerp(transform.position, destino, speed * Time.deltaTime);
 		//Parallax
 		Vector3 deltaCamara = transform.position - posAnteriorCamara;

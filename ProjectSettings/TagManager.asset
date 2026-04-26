@@ -81,6 +81,9 @@ TagManager:
   - name: Enemigos
     uniqueID: 3846621975
     locked: 0
+  - name: Proyectil
+    uniqueID: 3729978279
+    locked: 0
   - name: Player
     uniqueID: 3537268777
     locked: 0

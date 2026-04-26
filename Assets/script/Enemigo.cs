@@ -15,22 +15,55 @@ public class Enemigo : MonoBehaviour
     private float tiempoEspera = 0f;
 
     public AudioClip sonidoAplastado;
-    private AudioSource fuenteDeAudio;
+	private AudioSource fuenteDeAudio;
+    
+	public float attackRange = 5f;
+	public float attackCooldown = 1f;
+
+	private Animator animator;
+	private float nextAttackTime = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+	void Start()
+	
+	{
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        //Añadile AudioSource
+		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+		animator = GetComponentInChildren<Animator>();
+		Debug.Log(animator);
+
+	    //Añadir AudioSource
         fuenteDeAudio = GetComponent<AudioSource>();
         if (fuenteDeAudio == null)
         {
             fuenteDeAudio = gameObject.AddComponent<AudioSource>();
         }
-    }
+	}
+    
 
-    // Update is called once per frame
-    void FixedUpdate()
+	// Update is called once per frame
+	void Update()
+	
+	{
+		float distance = Vector2.Distance(transform.position, player.position);
+		
+
+		if (distance <= attackRange && Time.time >= nextAttackTime)
+		{
+			rb.linearVelocity = Vector2.zero;
+			Attack();
+			nextAttackTime = Time.time + attackCooldown;
+		}
+	}
+
+	void Attack()
+	{
+		Debug.Log("ATAQUE ACTIVADO");
+		animator.SetTrigger("Attack");
+	}
+	void FixedUpdate()
+		
+	
     {
         if (puntoSuelo == null) return;
         tiempoEspera -= Time.fixedDeltaTime;

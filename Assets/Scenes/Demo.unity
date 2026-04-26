@@ -574,7 +574,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7767738432604204985, guid: 128283cea72d627499869f059f1454f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.57, g: 0.57, b: 0.57, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1149,7 +1149,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 8df5f80457038894f9b4681a204a5989, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.745, g: 0.745, b: 0.745, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1231,6 +1231,10 @@ PrefabInstance:
       value: -0.3164068
       objectReference: {fileID: 0}
     - target: {fileID: 2356876368803617388, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 838893834}
+    - target: {fileID: 2356876368803617388, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 838893834}
@@ -1268,7 +1272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5399858836444552910, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.15
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: 5399858836444552910, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1300,7 +1304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881620155049589432, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.08333
+      value: -24.99
       objectReference: {fileID: 0}
     - target: {fileID: 7881620155049589432, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1485,6 +1489,7 @@ GameObject:
   - component: {fileID: 838893832}
   - component: {fileID: 838893830}
   - component: {fileID: 838893829}
+  - component: {fileID: 838893835}
   - component: {fileID: 838893828}
   m_Layer: 0
   m_Name: Player
@@ -1743,6 +1748,18 @@ Transform:
   - {fileID: 173264300}
   m_Father: {fileID: 848049364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &838893835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838893827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a081bfd3739f6cb4fb8d331e6155c94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombateCaC
 --- !u!1 &848049363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,7 +2183,7 @@ SpriteRenderer:
   m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7767738432604204985, guid: 128283cea72d627499869f059f1454f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.56700003, g: 0.56700003, b: 0.56700003, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2275,7 +2292,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7767738432604204985, guid: 128283cea72d627499869f059f1454f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.57, g: 0.57, b: 0.57, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2819,7 +2836,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3784475678862650978, guid: 2bebd203e1f1a1b4fb8b28b05afc8d1b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.674, g: 0.674, b: 0.674, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3387,7 +3404,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7767738432604204985, guid: 128283cea72d627499869f059f1454f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.57, g: 0.57, b: 0.57, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

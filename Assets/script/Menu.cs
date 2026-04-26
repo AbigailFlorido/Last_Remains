@@ -4,7 +4,7 @@ public class Menu : MonoBehaviour
 {
     public void Jugar()
     {
-        SceneManager.LoadScene("xd");
+        SceneManager.LoadScene("Demo");
     }
     public void Salir()
     {

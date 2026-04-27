@@ -6,8 +6,8 @@ using TMPro;
 
 public class Movimiento: MonoBehaviour
 {
-    public float velocidad = 7f;
-    public float velocidadCarrera = 12f;
+    public float velocidad = 4f;
+    public float velocidadCarrera = 8f;
     //No importa tanto el valor de aqu� pero si es importante el punto y coma de esta parte
     public float fuerzaSalto = 5.5f;
     private Rigidbody2D rb;
@@ -39,7 +39,7 @@ public class Movimiento: MonoBehaviour
     public float gastoStamina = 1f;     // baja por segundo
     public float recuperacion = 2f;     // sube por segundo
 
-    public float delayRecuperacion = 1f; // ⏱️ cooldown antes de regenerar
+    public float delayRecuperacion = 12f; // ⏱️ cooldown antes de regenerar
     private float tiempoSinCorrer = 0f;
 
     //Añadir sonidos

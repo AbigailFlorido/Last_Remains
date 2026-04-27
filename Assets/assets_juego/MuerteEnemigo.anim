@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Muerte
+  m_Name: MuerteEnemigo
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -34,7 +34,7 @@ AnimationClip:
       value: {fileID: -3117120000470491939, guid: 8ef7d72ac68bd4a3da758f52f3d0f44e, type: 3}
     - time: 1
       value: {fileID: -7388803944783145557, guid: 5d89494bb177b416f8cbb2259d9d1a7a, type: 3}
-    - time: 1.8166667
+    - time: 1.4166666
       value: {fileID: -7388803944783145557, guid: 5d89494bb177b416f8cbb2259d9d1a7a, type: 3}
     attribute: m_Sprite
     path: 
@@ -71,7 +71,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.8333334
+    m_StopTime: 1.4333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

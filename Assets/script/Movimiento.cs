@@ -7,6 +7,7 @@ using TMPro;
 public class Movimiento: MonoBehaviour
 {
     public float velocidad = 7f;
+    public float velocidadCarrera = 12f;
     //No importa tanto el valor de aqu� pero si es importante el punto y coma de esta parte
     public float fuerzaSalto = 5.5f;
     private Rigidbody2D rb;
@@ -30,10 +31,20 @@ public class Movimiento: MonoBehaviour
 	private Animator animator;
 	
     private SpriteRenderer spriteRenderer;
+    
 
-	//Añadir sonidos
+    public float staminaMax = 5f;
+    public float staminaActual;
 
-	public AudioClip sonidoMoneda;
+    public float gastoStamina = 1f;     // baja por segundo
+    public float recuperacion = 2f;     // sube por segundo
+
+    public float delayRecuperacion = 1f; // ⏱️ cooldown antes de regenerar
+    private float tiempoSinCorrer = 0f;
+
+    //Añadir sonidos
+
+    public AudioClip sonidoMoneda;
 	public AudioClip sonidoDano;
 	public AudioClip sonidoSalto;
 	private AudioSource fuenteDeAudio;
@@ -46,10 +57,11 @@ public class Movimiento: MonoBehaviour
 	    animator = GetComponent<Animator>();
 	    colorOriginal = spriteRenderer.color;
 	    ActualizarPuntos();
+        staminaActual = staminaMax;
 
 
-		//Añadile AudioSource
-		fuenteDeAudio = GetComponent<AudioSource>();
+        //Añadile AudioSource
+        fuenteDeAudio = GetComponent<AudioSource>();
 		if (fuenteDeAudio == null)
 		{
 			fuenteDeAudio = gameObject.AddComponent<AudioSource>();
@@ -59,12 +71,64 @@ public class Movimiento: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float movimientoX = Input.GetAxis("Horizontal");
-        // se utiliza flotante porque no son enteros
-        //transform.Translate(movimientoX * velocidad * Time.deltaTime, 0f,0f);
-        //translate es para mover
 
-        rb.linearVelocity = new Vector2(movimientoX * velocidad, rb.linearVelocity.y);
+        float movimientoX = Input.GetAxis("Horizontal");
+
+        float velocidadActual = velocidad;
+
+        // SOLO puede correr si tiene stamina
+        bool puedeCorrer = Input.GetKey(KeyCode.LeftShift) && staminaActual > 0 && movimientoX != 0;
+
+        if (puedeCorrer)
+        {
+            velocidadActual = velocidadCarrera;
+            staminaActual -= gastoStamina * Time.deltaTime;
+            tiempoSinCorrer = 0f;
+        }
+        else
+        {
+            tiempoSinCorrer += Time.deltaTime;
+
+            if (tiempoSinCorrer >= delayRecuperacion)
+            {
+                staminaActual += recuperacion * Time.deltaTime;
+            }
+        }
+
+        // si se acaba la stamina, fuerza velocidad normal
+        if (staminaActual <= 0)
+        {
+            velocidadActual = velocidad;
+        }
+
+        //rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
+
+
+        bool corriendo = Input.GetKey(KeyCode.LeftShift) && staminaActual > 0 && movimientoX != 0;
+
+        if (corriendo)
+        {
+            velocidadActual = velocidadCarrera;
+            staminaActual -= gastoStamina * Time.deltaTime;
+
+            tiempoSinCorrer = 0f; // reinicia cooldown
+        }
+        else
+        {
+            tiempoSinCorrer += Time.deltaTime;
+
+            // solo regenera después del cooldown
+            if (tiempoSinCorrer >= delayRecuperacion)
+            {
+                staminaActual += recuperacion * Time.deltaTime;
+            }
+        }
+
+        // limitar valores
+        staminaActual = Mathf.Clamp(staminaActual, 0, staminaMax);
+
+        // aplicar movimiento
+        rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
         if (movimientoX > 0)
         {
             spriteRenderer.flipX = false;

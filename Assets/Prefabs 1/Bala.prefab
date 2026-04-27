@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7541403792725903592}
   - component: {fileID: 320197925388203744}
   - component: {fileID: 4195310186189725565}
-  - component: {fileID: 7410626795661830396}
+  - component: {fileID: 2309252151540452265}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Untagged
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bala
   velocidad: 20
   dano: 20
---- !u!50 &7410626795661830396
+--- !u!50 &2309252151540452265
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0

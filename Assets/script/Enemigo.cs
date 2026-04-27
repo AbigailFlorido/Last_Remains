@@ -24,7 +24,7 @@ public class Enemigo : MonoBehaviour
 	private float nextAttackTime = 0f;
 	
 	[SerializeField] private float Vida;
-	[SerializeField] private GameObject efectoMuerte;
+	[SerializeField] private GameObject Muerte;
 	
 	public void TomarDano(float dano)
 	{
@@ -37,7 +37,7 @@ public class Enemigo : MonoBehaviour
 	}
 	private void Muerte()
 	{
-		Instantiate(efectoMuerte, transform.position, Quaternion.identity);
+		Instantiate(Muerte, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}
 

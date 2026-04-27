@@ -22,6 +22,24 @@ public class Enemigo : MonoBehaviour
 
 	private Animator animator;
 	private float nextAttackTime = 0f;
+	
+	[SerializeField] private float Vida;
+	[SerializeField] private GameObject efectoMuerte;
+	
+	public void TomarDano(float dano)
+	{
+		Vida -= dano;
+		if (Vida <= 0)
+		{
+			Muerte();
+			Debug.Log("Se muerexd");
+		}
+	}
+	private void Muerte()
+	{
+		Instantiate(efectoMuerte, transform.position, Quaternion.identity);
+		Destroy(gameObject);
+	}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -86,7 +104,7 @@ public class Enemigo : MonoBehaviour
         }
          //Siempre se mueva no se detenga al voltear
          rb.linearVelocity = new Vector2(velocidad*direccion, rb.linearVelocity.y);
-        Debug.Log("Caminando");
+	    //Debug.Log("Caminando");
     }
     void Voltear()
     {

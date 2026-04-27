@@ -11,6 +11,7 @@ public class DisparoJugador : MonoBehaviour
 		{
 			//disparar
 			Disparar();
+			Debug.Log("Dispara");
 		}
 	}
 	private void Disparar()

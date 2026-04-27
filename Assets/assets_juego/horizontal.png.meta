@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 78c6f7bd0b5684a769790d7a4ce54eed
+guid: 9be668e38d7924b57b7c2e8f82f6d566
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6615606257809680845
-    second: sin marco negro_0
+      213: -1657521366555931655
+    second: horizontal_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sin marco negro_0
+      name: horizontal_0
       rect:
         serializedVersion: 2
-        x: 2807
-        y: 1403
-        width: 3746
-        height: 7178
+        x: 1559
+        y: 2963
+        width: 7178
+        height: 3746
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc9e89a27da5fcb50800000000000000
-      internalID: 6615606257809680845
+      spriteID: 9fb40da591d4ff8e0800000000000000
+      internalID: -1657521366555931655
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sin marco negro_0: 6615606257809680845
+      horizontal_0: -1657521366555931655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2647,6 +2647,14 @@ PrefabInstance:
       value: -0.3164068
       objectReference: {fileID: 0}
     - target: {fileID: 2356876368803617388, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
+      propertyPath: Vida
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356876368803617388, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
+      propertyPath: vida
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356876368803617388, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 838893834}
@@ -3320,7 +3328,6 @@ GameObject:
   - component: {fileID: 838893832}
   - component: {fileID: 838893830}
   - component: {fileID: 838893829}
-  - component: {fileID: 838893835}
   - component: {fileID: 838893836}
   - component: {fileID: 838893828}
   m_Layer: 0
@@ -3584,18 +3591,6 @@ Transform:
   - {fileID: 813723609}
   m_Father: {fileID: 848049364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &838893835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838893827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a081bfd3739f6cb4fb8d331e6155c94d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CombateCaC
 --- !u!114 &838893836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3609,7 +3604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisparoJugador
   controladorDisparo: {fileID: 813723609}
-  bala: {fileID: 4176579354033237667, guid: e537c19a871f6485486dbdf28782b604, type: 3}
+  bala: {fileID: 3717560066108214442, guid: 6c31da3ed0542464c9c639364421491a, type: 3}
 --- !u!1 &848049363
 GameObject:
   m_ObjectHideFlags: 0

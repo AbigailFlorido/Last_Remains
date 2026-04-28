@@ -31,6 +31,7 @@ public class Enemigo : MonoBehaviour
 		Vida -= dano;
 		if (Vida <= 0)
 		{
+			rb.constraints = RigidbodyConstraints2D.FreezePosition;
 			Muerte();
 			Debug.Log("Se muerexd");
 		}

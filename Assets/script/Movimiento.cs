@@ -13,6 +13,7 @@ public class Movimiento: MonoBehaviour
     private Rigidbody2D rb;
     // rb es el nombre
 	private bool enSuelo = true;
+	public Transform puntoSuelo;
 
 	public int slime;
 	public int vidas = 5;
@@ -146,6 +147,7 @@ public class Movimiento: MonoBehaviour
 	        Debug.Log("Estas saltando");
 	        Debug.Log("Esta sonando");
         }
+	    enSuelo = true;
 	    //animaciones
         if (!enSuelo)
         {

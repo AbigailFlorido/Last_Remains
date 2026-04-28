@@ -24,7 +24,7 @@ public class Enemigo : MonoBehaviour
 	private float nextAttackTime = 0f;
 	
 	[SerializeField] private float Vida;
-	[SerializeField] private GameObject efectoMuerte;
+	//[SerializeField] private GameObject efectoMuerte;
 	
 	public void TomarDano(float dano)
 	{
@@ -35,11 +35,12 @@ public class Enemigo : MonoBehaviour
 			Debug.Log("Se muerexd");
 		}
 	}
-	private void Muerte()
+	void Muerte()
 	{
         Debug.Log("Se muerexd");
-        Instantiate(efectoMuerte, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+		//Instantiate(efectoMuerte, transform.position, Quaternion.identity);
+		animator.SetTrigger("Muerte");
+		Destroy(gameObject,1.5f);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

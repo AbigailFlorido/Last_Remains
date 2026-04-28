@@ -81,31 +81,32 @@ public class Enemigo : MonoBehaviour
 		animator.SetTrigger("Attack");
 	}
 	void FixedUpdate()
+	{
 		
+		if (puntoSuelo == null) return;
+		tiempoEspera -= Time.fixedDeltaTime;
+		bool haySuelo = Physics2D.Raycast(puntoSuelo.position, Vector2.down, distanciaSuelo, capaSuelo);
 	
-    {
-        if (puntoSuelo == null) return;
-        tiempoEspera -= Time.fixedDeltaTime;
-        bool haySuelo = Physics2D.Raycast(puntoSuelo.position, Vector2.down, distanciaSuelo, capaSuelo);
-
-        // Sin suelo adelante: voltear (solamente si no acaba de voltear)
-        if (haySuelo && tiempoEspera <= 0f)
-        {
-            Voltear();
-            //va a esperar antes de voltear otra vez
-            tiempoEspera = 0.3f;
-            Debug.Log("Viste el suelo");
-        }
-        //Si el player esta cerca va a perseguirlo
-         if (player != null && Vector2.Distance(transform.position, player.position) <= distanciaVision)
-        {
-            int nuevaDir = player.position.x > transform.position.x ? 1 : -1;
-            if (nuevaDir != direccion) Voltear();
-            Debug.Log("Viste al jugador");
-        }
-         //Siempre se mueva no se detenga al voltear
-         rb.linearVelocity = new Vector2(velocidad*direccion, rb.linearVelocity.y);
-	    //Debug.Log("Caminando");
+		// Sin suelo adelante: voltear (solamente si no acaba de voltear)
+		if (haySuelo && tiempoEspera <= 0f)
+		{
+			Voltear();
+			//va a esperar antes de voltear otra vez
+			tiempoEspera = 0.3f;
+			Debug.Log("Viste el suelo");
+		}
+		//Si el player esta cerca va a perseguirlo
+	
+		if (player != null && Vector2.Distance(transform.position, player.position) <= distanciaVision)
+		{
+			int nuevaDir = player.position.x > transform.position.x ? 1 : -1;
+			if (nuevaDir != direccion) Voltear();
+			Debug.Log("Viste al jugador");
+		}
+		//Siempre se mueva no se detenga al voltear
+		rb.linearVelocity = new Vector2(velocidad*direccion, rb.linearVelocity.y);
+		//Debug.Log("Caminando")
+        
     }
     void Voltear()
     {

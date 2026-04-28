@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: edeae566660a742429b7bac2e6130d54
+guid: dfa3b7df38f4e43bb95d1a76a590bda8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6160590299579339243
-    second: Zombiemuerte - 3_0
+      213: 6953538264210910509
+    second: Zombiemuerte - 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,16 +96,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombiemuerte - 3_0
+      name: Zombiemuerte - 1_0
       rect:
         serializedVersion: 2
         x: 74
         y: 89
-        width: 557
+        width: 827
         height: 1727
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51e2bd243cf218aa0800000000000000
-      internalID: -6160590299579339243
+      spriteID: d2da06ab53eef7060800000000000000
+      internalID: 6953538264210910509
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b685e9e23a4794d9bac0f5783c0449b2
+    spriteID: aff5c62ba0e4b418bacc9987fb0b217a
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Zombiemuerte - 3_0: -6160590299579339243
+      Zombiemuerte - 1_0: 6953538264210910509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

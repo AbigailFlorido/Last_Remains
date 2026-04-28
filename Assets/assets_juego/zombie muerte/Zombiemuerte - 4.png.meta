@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dfa3b7df38f4e43bb95d1a76a590bda8
+guid: d7aa9ff29ecab4d4f8f791bf583fab21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6953538264210910509
-    second: Zombiemuerte - 1_0
+      213: -686904130058790110
+    second: Zombiemuerte - 4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,16 +96,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombiemuerte - 1_0
+      name: Zombiemuerte - 4_0
       rect:
         serializedVersion: 2
         x: 74
         y: 89
-        width: 827
+        width: 557
         height: 1727
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2da06ab53eef7060800000000000000
-      internalID: 6953538264210910509
+      spriteID: 22bd8154550a776f0800000000000000
+      internalID: -686904130058790110
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aff5c62ba0e4b418bacc9987fb0b217a
+    spriteID: 64066a28162f646b3b08afd1ff15f992
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Zombiemuerte - 1_0: 6953538264210910509
+      Zombiemuerte - 4_0: -686904130058790110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

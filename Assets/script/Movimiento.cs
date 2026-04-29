@@ -11,7 +11,12 @@ public class Movimiento: MonoBehaviour
     //No importa tanto el valor de aqu� pero si es importante el punto y coma de esta parte
     public float fuerzaSalto = 5.5f;
     private Rigidbody2D rb;
-    // rb es el nombre
+	// rb es el nombre
+    
+	[Header ("Ground Check")]
+	public Transform groundCheck;
+	public float radioGroundCheck = 0.2f;
+	public LayerMask capaSuelo;
 	private bool enSuelo = true;
 	public Transform puntoSuelo;
 
@@ -138,6 +143,10 @@ public class Movimiento: MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+        
+        
+        
+	    enSuelo = Physics2D.OverlapCircle(groundCheck.position, radioGroundCheck, capaSuelo);
         if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
@@ -228,11 +237,11 @@ public class Movimiento: MonoBehaviour
 	}
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+	    /* if (collision.gameObject.CompareTag("ground"))
         {
             Debug.Log("Estas en el piso");
             enSuelo = true;
-        }
+	    }*/
 	    if(collision.gameObject.CompareTag("Enemy") && vidas > 0 && !recibiendoDano)
 	    {
 	    	Debug.Log("Recibiste dano");
@@ -254,5 +263,11 @@ public class Movimiento: MonoBehaviour
         }
        
     }
+	void OnDrawGizmosSelected()
+	{
+		if(groundCheck == null) return;
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere(groundCheck.position,radioGroundCheck);
+	}
     }
 

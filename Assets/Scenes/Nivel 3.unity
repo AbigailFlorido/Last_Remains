@@ -1106,6 +1106,71 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1001 &708556560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2397294299896720516, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7233450957159718697, guid: 343bf89aabd88ed4a811378a632e3289, type: 3}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.53697
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.21836
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480598446030199137, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906617335380802484, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194792098668794353, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
+      propertyPath: m_Name
+      value: EfectoMuerteEnemigo3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0db02f7764dfd21419a1b34483865057, type: 3}
 --- !u!1 &769264018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,3 +2757,4 @@ SceneRoots:
   - {fileID: 769264020}
   - {fileID: 687687317}
   - {fileID: 2117494809}
+  - {fileID: 708556560}

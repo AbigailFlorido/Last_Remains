@@ -101,7 +101,7 @@ public class Enemigo3 : MonoBehaviour
 	void Attack()
 	{
 		Debug.Log("¡ATAQUE!");
-		if (animator != null) animator.SetTrigger("Attack");
+		if (animator != null) animator.SetTrigger("Attackz");
 	}
 
 	void Voltear()
@@ -127,7 +127,7 @@ public class Enemigo3 : MonoBehaviour
 	{
 		rb.linearVelocity = Vector2.zero;
 		rb.bodyType = RigidbodyType2D.Static; // Para que no se mueva al morir
-		if (animator != null) animator.SetTrigger("Muerte");
+		if (animator != null) animator.SetTrigger("muerteZ");
 		Destroy(gameObject, 1.5f);
 	}
 }

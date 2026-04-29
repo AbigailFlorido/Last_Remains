@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class Movimiento : MonoBehaviour
+public class Movimiento3 : MonoBehaviour
 {
 	public float velocidad = 4f;
 	public float velocidadCarrera = 8f;
@@ -125,8 +125,8 @@ public class Movimiento : MonoBehaviour
 
 		if (other.CompareTag("Cabeza_enemigo"))
 		{
-			// OJO: Asegúrate de tener el script "Enemigo" creado
-			Enemigo enemigo = other.GetComponentInParent<Enemigo>();
+			// OJO: Asegúrate de tener el script "Enemigo3" creado
+			Enemigo3 enemigo = other.GetComponentInParent<Enemigo3>();
 			if (enemigo != null)
 			{
 				enemigo.Morir();

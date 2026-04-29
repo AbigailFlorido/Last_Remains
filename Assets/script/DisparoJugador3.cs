@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DisparoJugador : MonoBehaviour
+public class DisparoJugador3 : MonoBehaviour
 
 {
 	public GameObject Bala3Prefab;

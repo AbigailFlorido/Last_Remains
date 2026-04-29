@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Cabeza_enemigo
   - puntoSuelo
+  - Enemy_01
   layers:
   - Default
   - TransparentFX

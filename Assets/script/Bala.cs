@@ -14,9 +14,20 @@ public class Bala : MonoBehaviour
 	{
 		if (other.CompareTag("Enemy"))
 		{
-			other.GetComponent<Enemigo>().TomarDano(dano);
-			Destroy(gameObject);
-			Debug.Log ("Daño a enemy");
+			Enemigo scriptEnemigo = other.GetComponentInParent<Enemigo>();
+			//other.GetComponent<Enemigo>().TomarDano(dano);
+			//Destroy(gameObject);
+			//Debug.Log ("Daño a enemy");
+			if (scriptEnemigo != null)
+			{
+				scriptEnemigo.TomarDano(dano);
+				Debug.Log("Impacto en: " + other.name); // Esto te dirá si le diste a la cabeza o al cuerpo
+				Destroy(gameObject);
+			}
+			else 
+			{
+				Debug.LogWarning("Se detectó tag Enemy en " + other.name + " pero no tiene el script Enemigo");
+			}
 		}
 	}
 }

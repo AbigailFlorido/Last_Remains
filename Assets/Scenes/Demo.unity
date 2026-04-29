@@ -3426,6 +3426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d914f1bc357884e7c8c10347a15a45bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisparoJugador
+  balaPrefab: {fileID: 3717560066108214442, guid: 6c31da3ed0542464c9c639364421491a, type: 3}
   controladorDisparo: {fileID: 813723609}
   bala: {fileID: 3717560066108214442, guid: 6c31da3ed0542464c9c639364421491a, type: 3}
 --- !u!1 &848049363

@@ -7,6 +7,7 @@ public class Bala : MonoBehaviour
 	
 	private void Update()
 	{
+		//transform.Translate(Vector2.right * velocidad * Time.deltaTime);
 		transform.Translate(Vector2.right * velocidad * Time.deltaTime);
 		Debug.Log ("La bala balea");
 	}

@@ -2,230 +2,221 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-
-
+ 
+ 
 public class Movimiento: MonoBehaviour
 {
-    public float velocidad = 4f;
-    public float velocidadCarrera = 8f;
-    //No importa tanto el valor de aqu� pero si es importante el punto y coma de esta parte
-    public float fuerzaSalto = 5.5f;
-    private Rigidbody2D rb;
+	public float velocidad = 4f;
+	public float velocidadCarrera = 8f;
+	//No importa tanto el valor de aqu� pero si es importante el punto y coma de esta parte
+	public float fuerzaSalto = 5.5f;
+	private Rigidbody2D rb;
 	// rb es el nombre
-    
 	[Header ("Ground Check")]
 	public Transform groundCheck;
 	public float radioGroundCheck = 0.2f;
 	public LayerMask capaSuelo;
 	private bool enSuelo = true;
-	public Transform puntoSuelo;
-
+	//public Transform puntoSuelo;
+ 
 	public int slime;
 	public int vidas = 5;
-	
-	
+
 	public TMP_Text textoPuntos;
-	
 	public float tiempoDano = 0.5f;
 	public float intervaloParpadeo = 0.1f;
 	public float fuerzaEmpujeX = 4f;
 	public float fuerzaEmpujeY = 3f;
-	
 	private bool recibiendoDano = false;
 	private Color colorOriginal;
-	
 	private Animator animator;
-	
-    private SpriteRenderer spriteRenderer;
-    
+	private SpriteRenderer spriteRenderer;
 
-    public float staminaMax = 5f;
-    public float staminaActual;
-
-    public float gastoStamina = 1f;     // baja por segundo
-    public float recuperacion = 2f;     // sube por segundo
-
-    public float delayRecuperacion = 12f; // ⏱️ cooldown antes de regenerar
-    private float tiempoSinCorrer = 0f;
-
-    //Añadir sonidos
-
-    public AudioClip sonidoMoneda;
+ 
+	public float staminaMax = 5f;
+	public float staminaActual;
+ 
+	public float gastoStamina = 1f;     // baja por segundo
+	public float recuperacion = 2f;     // sube por segundo
+ 
+	public float delayRecuperacion = 12f; // ⏱️ cooldown antes de regenerar
+	private float tiempoSinCorrer = 0f;
+ 
+	//Añadir sonidos
+ 
+	public AudioClip sonidoMoneda;
 	public AudioClip sonidoDano;
 	public AudioClip sonidoSalto;
 	private AudioSource fuenteDeAudio;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-	    spriteRenderer = GetComponent<SpriteRenderer>();
-	    animator = GetComponent<Animator>();
-	    colorOriginal = spriteRenderer.color;
-	    ActualizarPuntos();
-        staminaActual = staminaMax;
-
-
-        //Añadile AudioSource
-        fuenteDeAudio = GetComponent<AudioSource>();
+ 
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
+	{
+		rb = GetComponent<Rigidbody2D>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		animator = GetComponent<Animator>();
+		colorOriginal = spriteRenderer.color;
+		ActualizarPuntos();
+		staminaActual = staminaMax;
+ 
+ 
+		//Añadile AudioSource
+		fuenteDeAudio = GetComponent<AudioSource>();
 		if (fuenteDeAudio == null)
 		{
 			fuenteDeAudio = gameObject.AddComponent<AudioSource>();
 		}
-    }
+	}
+ 
+	// Update is called once per frame
+	void Update()
+	{
+ 
+		float movimientoX = Input.GetAxis("Horizontal");
+ 
+		float velocidadActual = velocidad;
+ 
+		// SOLO puede correr si tiene stamina
+		bool puedeCorrer = Input.GetKey(KeyCode.LeftShift) && staminaActual > 0 && movimientoX != 0;
+ 
+		if (puedeCorrer)
+		{
+			velocidadActual = velocidadCarrera;
+			staminaActual -= gastoStamina * Time.deltaTime;
+			tiempoSinCorrer = 0f;
+		}
+		else
+		{
+			tiempoSinCorrer += Time.deltaTime;
+ 
+			if (tiempoSinCorrer >= delayRecuperacion)
+			{
+				staminaActual += recuperacion * Time.deltaTime;
+			}
+		}
+ 
+		// si se acaba la stamina, fuerza velocidad normal
+		if (staminaActual <= 0)
+		{
+			velocidadActual = velocidad;
+		}
+ 
+		//rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
+ 
+ 
+		bool corriendo = Input.GetKey(KeyCode.LeftShift) && staminaActual > 0 && movimientoX != 0;
+ 
+		if (corriendo)
+		{
+			velocidadActual = velocidadCarrera;
+			staminaActual -= gastoStamina * Time.deltaTime;
+ 
+			tiempoSinCorrer = 0f; // reinicia cooldown
+		}
+		else
+		{
+			tiempoSinCorrer += Time.deltaTime;
+ 
+			// solo regenera después del cooldown
+			if (tiempoSinCorrer >= delayRecuperacion)
+			{
+				staminaActual += recuperacion * Time.deltaTime;
+			}
+		}
+ 
+		// limitar valores
+		staminaActual = Mathf.Clamp(staminaActual, 0, staminaMax);
+ 
+		// aplicar movimiento
+		rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
+		if (movimientoX > 0)
+		{
+			spriteRenderer.flipX = false;
+		}
+		if(movimientoX < 0)
+		{
+			spriteRenderer.flipX = true;
+		}
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        float movimientoX = Input.GetAxis("Horizontal");
-
-        float velocidadActual = velocidad;
-
-        // SOLO puede correr si tiene stamina
-        bool puedeCorrer = Input.GetKey(KeyCode.LeftShift) && staminaActual > 0 && movimientoX != 0;
-
-        if (puedeCorrer)
-        {
-            velocidadActual = velocidadCarrera;
-            staminaActual -= gastoStamina * Time.deltaTime;
-            tiempoSinCorrer = 0f;
-        }
-        else
-        {
-            tiempoSinCorrer += Time.deltaTime;
-
-            if (tiempoSinCorrer >= delayRecuperacion)
-            {
-                staminaActual += recuperacion * Time.deltaTime;
-            }
-        }
-
-        // si se acaba la stamina, fuerza velocidad normal
-        if (staminaActual <= 0)
-        {
-            velocidadActual = velocidad;
-        }
-
-        //rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
-
-
-        bool corriendo = Input.GetKey(KeyCode.LeftShift) && staminaActual > 0 && movimientoX != 0;
-
-        if (corriendo)
-        {
-            velocidadActual = velocidadCarrera;
-            staminaActual -= gastoStamina * Time.deltaTime;
-
-            tiempoSinCorrer = 0f; // reinicia cooldown
-        }
-        else
-        {
-            tiempoSinCorrer += Time.deltaTime;
-
-            // solo regenera después del cooldown
-            if (tiempoSinCorrer >= delayRecuperacion)
-            {
-                staminaActual += recuperacion * Time.deltaTime;
-            }
-        }
-
-        // limitar valores
-        staminaActual = Mathf.Clamp(staminaActual, 0, staminaMax);
-
-        // aplicar movimiento
-        rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
-        if (movimientoX > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        if(movimientoX < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        
-        
-        
-	    enSuelo = Physics2D.OverlapCircle(groundCheck.position, radioGroundCheck, capaSuelo);
-        if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
-            enSuelo = false;
-            //Añadir Sonido
-            fuenteDeAudio.PlayOneShot(sonidoSalto);
-	        Debug.Log("Estas saltando");
-	        Debug.Log("Esta sonando");
-        }
-	    enSuelo = true;
-	    //animaciones
-        if (!enSuelo)
-        {
-         animator.Play("Jump");
-        }
-        else if (movimientoX != 0)
-        {
-        animator.Play("Walk");
-        }
-        else
-        {
-        animator.Play("Idle");
-        }
-
-
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        //Debug.Log("Hemos entrado");
-        //Esto es para q salga como mensaje y sale en la consola de los mensajes, tmb hay que activarlo en el objeto como trigger y para comprobarlo pues sale en la consola
-        //Tmb podemos actuar sobre etiquetas y pues cn el objeto le picamos y ah� viene para ponerle los tags, es importante q si lo usamos escribamos exactamente igual el nombre
-      
-	    if(other.name == "slime")
-        {
-	        // Debug.Log("Haz conseguido un slime");
-		    slime = slime + 1;
-		    ActualizarPuntos();
-		    Debug.Log("Tienes: "+slime);
+		enSuelo = Physics2D.OverlapCircle(groundCheck.position, radioGroundCheck, capaSuelo);
+		if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
+		{
+			rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
+			enSuelo = false;
+			//Añadir Sonido
+			fuenteDeAudio.PlayOneShot(sonidoSalto);
+			Debug.Log("Estas saltando");
+			Debug.Log("Esta sonando");
+		}
+		enSuelo = true;
+		//animaciones
+		if (!enSuelo)
+		{
+			animator.Play("Jump");
+		}
+		else if (movimientoX != 0)
+		{
+			animator.Play("Walk");
+		}
+		else
+		{
+			animator.Play("Idle");
+		}
+ 
+ 
+	}
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		//Debug.Log("Hemos entrado");
+		//Esto es para q salga como mensaje y sale en la consola de los mensajes, tmb hay que activarlo en el objeto como trigger y para comprobarlo pues sale en la consola
+		//Tmb podemos actuar sobre etiquetas y pues cn el objeto le picamos y ah� viene para ponerle los tags, es importante q si lo usamos escribamos exactamente igual el nombre
+		if(other.name == "slime")
+		{
+			// Debug.Log("Haz conseguido un slime");
+			slime = slime + 1;
+			ActualizarPuntos();
+			Debug.Log("Tienes: "+slime);
 			//Añadir Sonido
 			fuenteDeAudio.PlayOneShot(sonidoMoneda);
-		    Destroy(other.gameObject);
-        }
-	    if(other.tag == ("eskeleton") && vidas > 0)
-	    {
-		    //QuitarVida();	
-	    	RecibirDano();
-	    }
-	    if(other.CompareTag("Cabeza_enemigo"))
-	    {
-	    	Enemigo enemigo = other.GetComponentInParent<Enemigo>();
-	    	if (enemigo != null)
-	    	{
-	    		enemigo.Morir();
-	    		rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto * 0.7f);
-	    	}
-	    }
-    }
-    void RecibirDano()
-    {
-        if (recibiendoDano) return; 
-
-        vidas--; 
-
-        recibiendoDano = true;
-        spriteRenderer.color = Color.red;
-        fuenteDeAudio.PlayOneShot(sonidoDano);
-
-        float direccionEmpuje = spriteRenderer.flipX ? 1f : -1f;
-        rb.linearVelocity = new Vector2(direccionEmpuje * fuerzaEmpujeX, fuerzaEmpujeY);
-
-        if (vidas <= 0)
-        {
-            Debug.Log("Game Over");
-            Invoke("ReiniciarNivel", 0.5f);
-        }
-
-        Invoke("VolverANormal", tiempoDano);
-    }
-    void VolverANormal()
+			Destroy(other.gameObject);
+		}
+		if(other.tag == ("eskeleton") && vidas > 0)
+		{
+			//QuitarVida();	
+			RecibirDano();
+		}
+		if(other.CompareTag("Cabeza_enemigo"))
+		{
+			Enemigo enemigo = other.GetComponentInParent<Enemigo>();
+			if (enemigo != null)
+			{
+				enemigo.Morir();
+				rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto * 0.7f);
+			}
+		}
+	}
+	void RecibirDano()
+	{
+		if (recibiendoDano) return;
+ 
+		vidas--;
+ 
+		recibiendoDano = true;
+		spriteRenderer.color = Color.red;
+		fuenteDeAudio.PlayOneShot(sonidoDano);
+ 
+		float direccionEmpuje = spriteRenderer.flipX ? 1f : -1f;
+		rb.linearVelocity = new Vector2(direccionEmpuje * fuerzaEmpujeX, fuerzaEmpujeY);
+ 
+		if (vidas <= 0)
+		{
+			Debug.Log("Game Over");
+			Invoke("ReiniciarNivel", 0.5f);
+		}
+ 
+		Invoke("VolverANormal", tiempoDano);
+	}
+	void VolverANormal()
 	{
 		recibiendoDano = false;
 		spriteRenderer.color = colorOriginal;
@@ -235,39 +226,36 @@ public class Movimiento: MonoBehaviour
 		Scene escenaActual = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(escenaActual.name);
 	}
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-	    /* if (collision.gameObject.CompareTag("ground"))
-        {
-            Debug.Log("Estas en el piso");
-            enSuelo = true;
-	    }*/
-	    if(collision.gameObject.CompareTag("Enemy") && vidas > 0 && !recibiendoDano)
-	    {
-	    	Debug.Log("Recibiste dano");
-	    	RecibirDano();
-	    	//QuitarVida();
-	    }
-    }
-	
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		/* if (collision.gameObject.CompareTag("ground"))
+		{
+		Debug.Log("Estas en el piso");
+		enSuelo = true;
+		}*/
+		if(collision.gameObject.CompareTag("Enemy") && vidas > 0 && !recibiendoDano)
+		{
+			Debug.Log("Recibiste dano");
+			RecibirDano();
+			//QuitarVida();
+		}
+	}
 	void ActualizarPuntos()
 	{
-	//	textoPuntos.text = "Slime" +slime;
+		//	textoPuntos.text = "Slime" +slime;
 	}
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("ground"))
-        {
-            Debug.Log("Estas fuera del piso");
-            enSuelo = false;
-        }
-       
-    }
+	void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("ground"))
+		{
+			Debug.Log("Estas fuera del piso");
+			enSuelo = false;
+		}
+	}
 	void OnDrawGizmosSelected()
 	{
 		if(groundCheck == null) return;
 		Gizmos.color = Color.green;
 		Gizmos.DrawWireSphere(groundCheck.position,radioGroundCheck);
 	}
-    }
-
+}

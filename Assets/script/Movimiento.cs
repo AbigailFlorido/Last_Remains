@@ -94,18 +94,11 @@ public class Movimiento : MonoBehaviour
 		}
 
 		// Animaciones
-		if (!enSuelo)
-		{
-			animator.Play("Jump");
-		}
-		else if (movimientoX != 0)
-		{
-			animator.Play("Walk");
-		}
-		else
-		{
-			animator.Play("Idle");
-		}
+		// 1. Enviamos la velocidad al parámetro "Speed" (Mathf.Abs asegura que siempre sea positivo)
+		animator.SetFloat("Speed", Mathf.Abs(movimientoX));
+
+		// 2. Enviamos si estamos en el suelo al parámetro "isGrounded"
+		animator.SetBool("isGrounded", enSuelo);
 	} // <--- AQUÍ ESTABA EL ERROR (había una llave extra abajo de esta)
 
 	private void OnTriggerEnter2D(Collider2D other)

@@ -16,10 +16,11 @@ public class Movimiento : MonoBehaviour
 	public LayerMask capaSuelo;
 	private bool enSuelo = true;
 
-	public int slime;
+	public int Cartas;
 	public int vidas = 5;
 
-	public TMP_Text textoPuntos;
+	public TMP_Text	textoPuntos;
+	
 	public float tiempoDano = 0.5f;
 	public float fuerzaEmpujeX = 4f;
 	public float fuerzaEmpujeY = 3f;
@@ -46,7 +47,7 @@ public class Movimiento : MonoBehaviour
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		animator = GetComponent<Animator>();
 		colorOriginal = spriteRenderer.color;
-		ActualizarPuntos();
+		/*ActualizarPuntos();*/
 		staminaActual = staminaMax;
 
 		fuenteDeAudio = GetComponent<AudioSource>();
@@ -103,11 +104,11 @@ public class Movimiento : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.name == "slime")
+		if (other.tag == "Cartas")
 		{
-			slime = slime + 1;
+			Cartas = Cartas + 1;
 			ActualizarPuntos();
-			fuenteDeAudio.PlayOneShot(sonidoMoneda);
+			//fuenteDeAudio.PlayOneShot(sonidoMoneda);
 			Destroy(other.gameObject);
 		}
         
@@ -169,8 +170,8 @@ public class Movimiento : MonoBehaviour
 
 	void ActualizarPuntos()
 	{
-		if (textoPuntos != null)
-			textoPuntos.text = "Slime: " + slime;
+		//if (textoPuntos != null)
+		textoPuntos.text = "Cartas: " + Cartas;
 	}
 
 	void OnDrawGizmosSelected()

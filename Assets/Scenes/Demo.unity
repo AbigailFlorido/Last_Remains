@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 14285497}
   - component: {fileID: 14285501}
   - component: {fileID: 14285502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -1906,7 +1906,7 @@ GameObject:
   - component: {fileID: 521669883}
   - component: {fileID: 521669887}
   - component: {fileID: 521669886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Solo elementos
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -2699,6 +2699,10 @@ PrefabInstance:
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3699622737500510544, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699622737500510544, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: m_TagString
       value: puntoSuelo
       objectReference: {fileID: 0}
@@ -2740,7 +2744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881620155049589432, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.99
+      value: -9.46
       objectReference: {fileID: 0}
     - target: {fileID: 7881620155049589432, guid: faadac6993eec46cea3394c33ebd03f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3515,7 +3519,11 @@ MonoBehaviour:
   velocidad: 4
   velocidadCarrera: 8
   fuerzaSalto: 5.5
-  puntoSuelo: {fileID: 0}
+  groundCheck: {fileID: 857147910}
+  radioGroundCheck: 0.2
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 64
   slime: 0
   vidas: 5
   textoPuntos: {fileID: 0}
@@ -3731,7 +3739,7 @@ Transform:
   m_GameObject: {fileID: 857147909}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.79, z: 0}
+  m_LocalPosition: {x: 0, y: -7.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

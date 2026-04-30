@@ -1,67 +1,51 @@
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class MusicManager : MonoBehaviour
 {
-    public static MusicManager instance;
+	private static MusicManager _instance;
+	public static MusicManager instance 
+	{
+		get 
+		{
+			if (_instance == null)
+			{
+				// Si no existe, buscamos uno en la escena
+				_instance = FindFirstObjectByType<MusicManager>();
 
-    public AudioClip musicaFondo;
-    [Range(0f, 1f)]
-    public float volumen = 0.3f;
-    private AudioSource fuenteDeAudio;
+				// Si aún no existe, creamos uno nuevo vacío
+				if (_instance == null)
+				{
+					GameObject singleton = new GameObject("MusicManager");
+					_instance = singleton.AddComponent<MusicManager>();
+					DontDestroyOnLoad(singleton);
+				}
+			}
+			return _instance;
+		}
+	}
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+	private AudioSource audioSource;
 
+	void Awake()
+	{
+		if (_instance != null && _instance != this)
+		{
+			Destroy(gameObject);
+			return;
+		}
+		_instance = this;
+		DontDestroyOnLoad(gameObject);
+		audioSource = GetComponent<AudioSource>();
+	}
 
-        fuenteDeAudio = GetComponent<AudioSource>();
-        if(fuenteDeAudio == null)
-        {
-            fuenteDeAudio = gameObject.AddComponent<AudioSource>();
-        }
-        fuenteDeAudio.clip = musicaFondo;
-        fuenteDeAudio.volume = volumen;
-        fuenteDeAudio.loop = true;
-        fuenteDeAudio.playOnAwake = false;
-        fuenteDeAudio.Play();
+	public void CambiarMusica(AudioClip nuevaMusica)
+	{
+		if (audioSource == null) audioSource = GetComponent<AudioSource>();
+		if (audioSource.clip == nuevaMusica) return;
 
-    }
-
-
-
-    public void CambiarVolumen (float nuevoVolumen)
-    {
-        volumen = nuevoVolumen;
-        fuenteDeAudio.volume = volumen;
-    }
-
-    public void CambiarMusica(AudioClip nuevaMusica)
-    {
-        // Si no hay m�sica nueva o es la misma que ya suena, no hacemos nada
-        if (nuevaMusica == null || fuenteDeAudio.clip == nuevaMusica) return;
-
-        fuenteDeAudio.clip = nuevaMusica;
-        fuenteDeAudio.Play();
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+		audioSource.clip = nuevaMusica;
+		audioSource.loop = true;
+		audioSource.Play();
+	}
 }

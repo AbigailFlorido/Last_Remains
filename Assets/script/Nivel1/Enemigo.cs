@@ -102,6 +102,16 @@ public class Enemigo : MonoBehaviour
 	{
 		Debug.Log("¡ATAQUE!");
 		if (animator != null) animator.SetTrigger("Zattack");
+
+		// NUEVO: Buscar el script del jugador y quitarle vida
+		if (player != null)
+		{
+			Movimiento scriptJugador = player.GetComponent<Movimiento>();
+			if (scriptJugador != null)
+			{
+				scriptJugador.RecibirDano();
+			}
+		}
 	}
 
 	void Voltear()

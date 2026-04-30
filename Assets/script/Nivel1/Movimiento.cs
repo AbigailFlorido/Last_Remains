@@ -5,174 +5,148 @@ using TMPro;
 
 public class Movimiento : MonoBehaviour
 {
-    public float velocidad = 4f;
-    public float velocidadCarrera = 8f;
-    public float fuerzaSalto = 5.5f;
-    private Rigidbody2D rb;
+	public float velocidad = 4f;
+	public float velocidadCarrera = 8f;
+	public float fuerzaSalto = 5.5f;
+	private Rigidbody2D rb;
 
-    [Header("Ground Check")]
-    public Transform groundCheck;
-    public float radioGroundCheck = 0.2f;
-    public LayerMask capaSuelo;
-    private bool enSuelo = true;
+	[Header("Ground Check")]
+	public Transform groundCheck;
+	public float radioGroundCheck = 0.2f;
+	public LayerMask capaSuelo;
+	private bool enSuelo = true;
 
-    public int Cartas;
-    public int vidas = 5;
+	public int Cartas;
+	public int vidas = 5;
+	public TMP_Text textoPuntos;
 
-    public TMP_Text textoPuntos;
+	[Header("Daño y Empuje")]
+	public float tiempoDano = 0.5f;
+	public float fuerzaEmpujeX = 4f;
+	public float fuerzaEmpujeY = 3f;
+	private bool recibiendoDano = false; // Esta variable ahora sí se usa
+	private Color colorOriginal;
+	private Animator animator;
+	private SpriteRenderer spriteRenderer;
 
-    public float tiempoDano = 0.5f;
-    public float fuerzaEmpujeX = 4f;
-    public float fuerzaEmpujeY = 3f;
-    private bool recibiendoDano = false;
-    private Color colorOriginal;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
+	[Header("Stamina")]
+	public float staminaMax = 5f;
+	public float staminaActual;
+	public float gastoStamina = 1f;
+	public float recuperacion = 2f;
+	public float delayRecuperacion = 12f;
+	private float tiempoSinCorrer = 0f;
 
-    public float staminaMax = 5f;
-    public float staminaActual;
-    public float gastoStamina = 1f;
-    public float recuperacion = 2f;
-    public float delayRecuperacion = 12f;
-    private float tiempoSinCorrer = 0f;
+	[Header("Audio")]
+	public AudioClip sonidoMoneda;
+	public AudioClip sonidoDano;
+	public AudioClip sonidoSalto;
+	private AudioSource fuenteDeAudio;
 
-    public AudioClip sonidoMoneda;
-    public AudioClip sonidoDano;
-    public AudioClip sonidoSalto;
-    private AudioSource fuenteDeAudio;
+	void Start()
+	{
+		rb = GetComponent<Rigidbody2D>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		animator = GetComponent<Animator>();
+		colorOriginal = spriteRenderer.color;
+		staminaActual = staminaMax;
+		ActualizarPuntos(); // Inicializamos el texto al empezar
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-        colorOriginal = spriteRenderer.color;
-        staminaActual = staminaMax;
+		fuenteDeAudio = GetComponent<AudioSource>() ?? gameObject.AddComponent<AudioSource>();
+	}
 
-        fuenteDeAudio = GetComponent<AudioSource>();
-        if (fuenteDeAudio == null)
-        {
-            fuenteDeAudio = gameObject.AddComponent<AudioSource>();
-        }
-    }
+	void Update()
+	{
+		float movimientoX = Input.GetAxis("Horizontal");
+		float velocidadActual = velocidad;
 
-    void Update()
-    {
-        float movimientoX = Input.GetAxis("Horizontal");
-        float velocidadActual = velocidad;
+		enSuelo = Physics2D.OverlapCircle(groundCheck.position, radioGroundCheck, capaSuelo);
 
-        enSuelo = Physics2D.OverlapCircle(groundCheck.position, radioGroundCheck, capaSuelo);
+		bool intentandoCorrer = Input.GetKey(KeyCode.LeftShift) && movimientoX != 0;
+		if (intentandoCorrer && staminaActual > 0)
+		{
+			velocidadActual = velocidadCarrera;
+			staminaActual -= gastoStamina * Time.deltaTime;
+			tiempoSinCorrer = 0f;
+		}
+		else
+		{
+			tiempoSinCorrer += Time.deltaTime;
+			if (tiempoSinCorrer >= delayRecuperacion) staminaActual += recuperacion * Time.deltaTime;
+		}
+		staminaActual = Mathf.Clamp(staminaActual, 0, staminaMax);
 
-        bool intentandoCorrer = Input.GetKey(KeyCode.LeftShift) && movimientoX != 0;
+		rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
 
-        if (intentandoCorrer && staminaActual > 0)
-        {
-            velocidadActual = velocidadCarrera;
-            staminaActual -= gastoStamina * Time.deltaTime;
-            tiempoSinCorrer = 0f;
-        }
-        else
-        {
-            tiempoSinCorrer += Time.deltaTime;
-            if (tiempoSinCorrer >= delayRecuperacion)
-            {
-                staminaActual += recuperacion * Time.deltaTime;
-            }
-        }
-        staminaActual = Mathf.Clamp(staminaActual, 0, staminaMax);
+		if (movimientoX > 0) spriteRenderer.flipX = false;
+		else if (movimientoX < 0) spriteRenderer.flipX = true;
 
-        rb.linearVelocity = new Vector2(movimientoX * velocidadActual, rb.linearVelocity.y);
+		if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
+		{
+			rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
+			fuenteDeAudio.PlayOneShot(sonidoSalto);
+		}
 
-        if (movimientoX > 0) spriteRenderer.flipX = false;
-        else if (movimientoX < 0) spriteRenderer.flipX = true;
+		animator.SetFloat("Speed", Mathf.Abs(movimientoX));
+		animator.SetBool("isGrounded", enSuelo);
+	}
 
-        if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
-            fuenteDeAudio.PlayOneShot(sonidoSalto);
-        }
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Cartas"))
+		{
+			Cartas++;
+			ActualizarPuntos();
+			Destroy(other.gameObject);
+		}
 
-        animator.SetFloat("Speed", Mathf.Abs(movimientoX));
-        animator.SetBool("isGrounded", enSuelo);
-    }
+		if (other.CompareTag("Enemy_01") && vidas > 0)
+		{
+			RecibirDano();
+		}
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Cartas")
-        {
-            Cartas = Cartas + 1;
-            ActualizarPuntos();
-            Destroy(other.gameObject);
-        }
+		if (other.CompareTag("Cabeza_enemigo"))
+		{
+			Enemigo enemigo = other.GetComponentInParent<Enemigo>();
+			if (enemigo != null)
+			{
+				enemigo.Morir();
+				rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto * 0.7f);
+			}
+		}
+	}
 
-        if (other.CompareTag("Enemy_01") && vidas > 0)
-        {
-            RecibirDano();
-        }
+	public void RecibirDano()
+	{
+		if (recibiendoDano) return; // AQUÍ SE USA LA VARIABLE PARA NO RECIBIR DAÑO REPETIDO
 
-        if (other.CompareTag("Cabeza_enemigo"))
-        {
-            Enemigo enemigo = other.GetComponentInParent<Enemigo>();
-            if (enemigo != null)
-            {
-                enemigo.Morir();
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto * 0.7f);
-            }
-        }
-    }
+		vidas--;
+		recibiendoDano = true; // Activamos el escudo temporal
+		spriteRenderer.color = Color.red;
+		fuenteDeAudio.PlayOneShot(sonidoDano);
 
-    void RecibirDano()
-    {
-        if (recibiendoDano) return;
+		float direccionEmpuje = spriteRenderer.flipX ? 1f : -1f;
+		rb.linearVelocity = new Vector2(direccionEmpuje * fuerzaEmpujeX, fuerzaEmpujeY);
 
-        vidas--;
-        recibiendoDano = true;
-        spriteRenderer.color = Color.red;
-        fuenteDeAudio.PlayOneShot(sonidoDano);
+		if (vidas <= 0)
+		{
+			SceneManager.LoadScene("GameOverScene");
+		}
+		else
+		{
+			Invoke("VolverANormal", tiempoDano);
+		}
+	}
 
-        float direccionEmpuje = spriteRenderer.flipX ? 1f : -1f;
-        rb.linearVelocity = new Vector2(direccionEmpuje * fuerzaEmpujeX, fuerzaEmpujeY);
+	void VolverANormal()
+	{
+		recibiendoDano = false; // Desactivamos el escudo
+		spriteRenderer.color = colorOriginal;
+	}
 
-        if (vidas <= 0)
-        {
-            SceneManager.LoadScene("GameOverScene");
-        }
-        else
-        {
-            // Esta línea es la que hace que el jugador vuelva a la normalidad
-            Invoke("VolverANormal", tiempoDano);
-        }
-    }
-
-    void VolverANormal()
-    {
-        recibiendoDano = false;
-        spriteRenderer.color = colorOriginal;
-    }
-
-    void ReiniciarNivel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy") && vidas > 0 && !recibiendoDano)
-        {
-            RecibirDano();
-        }
-    }
-
-    void ActualizarPuntos()
-    {
-        if (textoPuntos != null)
-            textoPuntos.text = "Cartas: " + Cartas;
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (groundCheck == null) return;
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck.position, radioGroundCheck);
-    }
+	void ActualizarPuntos() // EL MÉTODO QUE FALTABA
+	{
+		if (textoPuntos != null)
+			textoPuntos.text = "Cartas: " + Cartas;
+	}
 }

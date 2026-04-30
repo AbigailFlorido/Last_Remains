@@ -232,11 +232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498012366149640977, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02
+      value: -0.029
       objectReference: {fileID: 0}
     - target: {fileID: 498012366149640977, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.331
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: 1187956018480906293, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
       propertyPath: Vida
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881620155049589432, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 7881620155049589432, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2433,7 +2433,7 @@ GameObject:
   - component: {fileID: 876815637}
   - component: {fileID: 876815640}
   - component: {fileID: 876815639}
-  - component: {fileID: 876815638}
+  - component: {fileID: 876815641}
   m_Layer: 5
   m_Name: BarraStamina
   m_TagString: Untagged
@@ -2460,20 +2460,6 @@ RectTransform:
   m_AnchoredPosition: {x: -75799, y: 35970}
   m_SizeDelta: {x: 66, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &876815638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876815636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ed45a0ad5862645b463be75307dc1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BarraStamina
-  barra: {fileID: 538764403}
-  movimiento: {fileID: 0}
 --- !u!114 &876815639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2512,6 +2498,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876815636}
   m_CullTransparentMesh: 1
+--- !u!114 &876815641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876815636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422b1f90020a85743b3d197479d51774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarraStamina2
+  barra: {fileID: 538764403}
+  movimiento: {fileID: 1171119658}
 --- !u!1 &952460324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,8 +2851,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 167529435
-  m_SortingLayer: 6
+  m_SortingLayerID: -412414935
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7168540986364394743, guid: a3c44aa38e8cf314dbb1811d74baadba, type: 3}
@@ -3564,7 +3564,7 @@ Transform:
   m_GameObject: {fileID: 1171119648}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.8, y: -2.895, z: 0}
+  m_LocalPosition: {x: -8.12, y: -2.895, z: 0}
   m_LocalScale: {x: 0.1223921, y: 0.1223921, z: 0.1223921}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3620,8 +3620,8 @@ MonoBehaviour:
   staminaMax: 5
   staminaActual: 0
   gastoStamina: 1
-  recuperacion: 2
-  delayRecuperacion: 12
+  recuperacion: 1
+  delayRecuperacion: 0.5
   sonidoMoneda: {fileID: 0}
   sonidoDano: {fileID: 0}
   sonidoSalto: {fileID: 0}

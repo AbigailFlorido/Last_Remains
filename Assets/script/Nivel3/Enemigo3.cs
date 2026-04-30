@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemigo3 : MonoBehaviour
+public class Enemigo3 : MonoBehaviour, IDamageable
 {
 	[Header("Configuración de Movimiento3")]
 	public float velocidad = 2f;
@@ -121,6 +121,7 @@ public class Enemigo3 : MonoBehaviour
 	{
 		Vida -= dano;
 		if (Vida <= 0) Morir();
+		Debug.Log("Enemigo3 recibió daño. Vida: " + Vida);
 	}
 
 	public void Morir()

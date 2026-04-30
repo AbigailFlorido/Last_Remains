@@ -31,8 +31,8 @@ public class Movimiento2 : MonoBehaviour
     public float staminaMax = 5f;
     public float staminaActual;
     public float gastoStamina = 1f;
-    public float recuperacion = 2f;
-    public float delayRecuperacion = 12f;
+	public float recuperacion = 1f;
+	public float delayRecuperacion = 0.5f;
     private float tiempoSinCorrer = 0f;
 
     public AudioClip sonidoMoneda;

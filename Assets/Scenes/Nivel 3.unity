@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 76785092}
   - component: {fileID: 76785095}
   - component: {fileID: 76785094}
-  - component: {fileID: 76785093}
+  - component: {fileID: 76785096}
   m_Layer: 5
   m_Name: fill
   m_TagString: Untagged
@@ -188,19 +188,6 @@ RectTransform:
   m_AnchoredPosition: {x: -656.54, y: 458.87}
   m_SizeDelta: {x: 77.13, y: 67.19}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &76785093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76785091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6d14ba9d371a644821bcbb823972e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BarraVida
-  rellenoBarraVida: {fileID: 76785094}
 --- !u!114 &76785094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +226,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76785091}
   m_CullTransparentMesh: 1
+--- !u!114 &76785096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76785091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65b1dbbdf178fb47a4794ca9923dd8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarraVida3
+  rellenoBarraVida: {fileID: 76785094}
 --- !u!4 &171746349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5399858836444552910, guid: d039239f65e2a6d4bab7894e0c65c8c9, type: 3}
@@ -1224,7 +1224,7 @@ EdgeCollider2D:
   - {x: 31.083372, y: -7.39401}
   - {x: 31.088308, y: -5.8141975}
   - {x: 29.634476, y: -5.815527}
-  - {x: 29.6335, y: -5.4177017}
+  - {x: 29.715378, y: -5.4177017}
   - {x: 31.090256, y: -5.4083395}
   - {x: 31.034594, y: 3.7446313}
   - {x: 29.17434, y: 3.74011}
@@ -2019,8 +2019,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1304165230}
   - component: {fileID: 1304165233}
+  - component: {fileID: 1304165234}
   - component: {fileID: 1304165232}
-  - component: {fileID: 1304165231}
   m_Layer: 5
   m_Name: BarraStamina
   m_TagString: Untagged
@@ -2047,20 +2047,6 @@ RectTransform:
   m_AnchoredPosition: {x: -75799, y: 35970}
   m_SizeDelta: {x: 66, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1304165231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304165229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ed45a0ad5862645b463be75307dc1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BarraStamina
-  barra: {fileID: 2144607666}
-  movimiento: {fileID: 1512625832}
 --- !u!114 &1304165232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,6 +2085,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304165229}
   m_CullTransparentMesh: 1
+--- !u!114 &1304165234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304165229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af80b83e6a0a4ef49ae0813cf1fd5dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarraStamina3
+  barra: {fileID: 2144607666}
+  movimiento: {fileID: 1512625836}
 --- !u!1 &1333386677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,9 +2360,9 @@ GameObject:
   - component: {fileID: 1512625835}
   - component: {fileID: 1512625834}
   - component: {fileID: 1512625833}
-  - component: {fileID: 1512625832}
-  - component: {fileID: 1512625831}
+  - component: {fileID: 1512625837}
   - component: {fileID: 1512625830}
+  - component: {fileID: 1512625836}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -2379,7 +2379,7 @@ Transform:
   m_GameObject: {fileID: 1512625828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.15, y: -2.62, z: 0}
+  m_LocalPosition: {x: 5.5, y: -4.05, z: 0}
   m_LocalScale: {x: 0.113737755, y: 0.113737755, z: 0.113737755}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2487,55 +2487,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1512625831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512625828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d914f1bc357884e7c8c10347a15a45bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DisparoJugador
-  Bala3Prefab: {fileID: 3717560066108214442, guid: 629f0dec07f6cf5418496b048e6a78ae, type: 3}
-  controladorDisparo: {fileID: 1333386678}
-  Bala3: {fileID: 3717560066108214442, guid: 629f0dec07f6cf5418496b048e6a78ae, type: 3}
---- !u!114 &1512625832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512625828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be1e9fcd5d6afb49a1b1daeddc38544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  velocidad: 4
-  velocidadCarrera: 8
-  fuerzaSalto: 5.5
-  groundCheck: {fileID: 26062413}
-  radioGroundCheck: 0.5
-  capaSuelo:
-    serializedVersion: 2
-    m_Bits: 64
-  Cartas: 0
-  vidas: 5
-  textoPuntos: {fileID: 946230372}
-  tiempoDano: 0.5
-  fuerzaEmpujeX: 4
-  fuerzaEmpujeY: 3
-  staminaMax: 5
-  staminaActual: 0
-  gastoStamina: 1
-  recuperacion: 0.5
-  delayRecuperacion: 1
-  sonidoMoneda: {fileID: 8300000, guid: 386b599ec82a5e94e8136e6ec5de951a, type: 3}
-  sonidoDano: {fileID: 8300000, guid: dcf3183b58d192946a6eaa6b14626478, type: 3}
-  sonidoSalto: {fileID: 8300000, guid: bff4ae2788c770d419c67dc6d4bec2c6, type: 3}
 --- !u!50 &1512625833
 Rigidbody2D:
   serializedVersion: 5
@@ -2644,6 +2595,55 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1512625836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512625828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4446cb0938e0f49826b914fe9539dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movimiento3
+  velocidad: 4
+  velocidadCarrera: 8
+  fuerzaSalto: 5.5
+  groundCheck: {fileID: 26062413}
+  radioGroundCheck: 0.2
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 64
+  slime: 0
+  vidas: 5
+  textoPuntos: {fileID: 0}
+  tiempoDano: 0.5
+  fuerzaEmpujeX: 4
+  fuerzaEmpujeY: 3
+  staminaMax: 5
+  staminaActual: 0
+  gastoStamina: 1
+  recuperacion: 4
+  delayRecuperacion: 6
+  sonidoMoneda: {fileID: 0}
+  sonidoDano: {fileID: 0}
+  sonidoSalto: {fileID: 0}
+--- !u!114 &1512625837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512625828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b96f42f14e7e7c4598b05d94b19387e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisparoJugador3
+  Bala3Prefab: {fileID: 3717560066108214442, guid: 629f0dec07f6cf5418496b048e6a78ae, type: 3}
+  controladorDisparo: {fileID: 1333386678}
+  Bala3: {fileID: 3717560066108214442, guid: 629f0dec07f6cf5418496b048e6a78ae, type: 3}
 --- !u!1 &1530739715
 GameObject:
   m_ObjectHideFlags: 0

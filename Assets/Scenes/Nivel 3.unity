@@ -1483,9 +1483,10 @@ GameObject:
   m_Component:
   - component: {fileID: 655072375}
   - component: {fileID: 655072374}
+  - component: {fileID: 655072376}
   m_Layer: 0
   m_Name: Acidoanimado - 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1564,6 +1565,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &655072376
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655072373}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.059313774, y: -0.1253959}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 65.72, w: 20.83}
+    pivot: {x: 0.07237996, y: 0.016038945}
+    oldSize: {x: 76.799995, y: 21.599998}
+    newSize: {x: 76.799995, y: 21.599998}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 10.9989395, y: 0.4420905}
+  m_EdgeRadius: 0
 --- !u!1 &687687314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +2677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769264020}
   - component: {fileID: 769264021}
+  - component: {fileID: 769264022}
   m_Layer: 0
   m_Name: Fondo nivel 3_0
   m_TagString: Untagged
@@ -2711,6 +2759,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!61 &769264022
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769264018}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -28.776712, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 57.6, y: 20.249998}
+    newSize: {x: 57.6, y: 20.249998}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.04657364, y: 20.249998}
+  m_EdgeRadius: 0
 --- !u!1001 &867240347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4638,9 +4732,9 @@ MonoBehaviour:
   gastoStamina: 1
   recuperacion: 4
   delayRecuperacion: 6
-  sonidoMoneda: {fileID: 0}
-  sonidoDano: {fileID: 0}
-  sonidoSalto: {fileID: 0}
+  sonidoMoneda: {fileID: 8300000, guid: 386b599ec82a5e94e8136e6ec5de951a, type: 3}
+  sonidoDano: {fileID: 8300000, guid: dcf3183b58d192946a6eaa6b14626478, type: 3}
+  sonidoSalto: {fileID: 8300000, guid: bff4ae2788c770d419c67dc6d4bec2c6, type: 3}
 --- !u!114 &1512625837
 MonoBehaviour:
   m_ObjectHideFlags: 0

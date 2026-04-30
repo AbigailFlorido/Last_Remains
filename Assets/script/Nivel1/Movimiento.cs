@@ -106,7 +106,7 @@ public class Movimiento : MonoBehaviour
 				miAnimatorUI.Play("Carta" + Cartas);
 			}
 
-			Destroy(other.gameObject,10f);
+			Destroy(other.gameObject,12f);
 		}
 
 		if (other.CompareTag("Enemy_01") && vidas > 0)

@@ -36,6 +36,7 @@ public class Movimiento : MonoBehaviour
 	public float recuperacion = 2f;
 	public float delayRecuperacion = 12f;
 	private float tiempoSinCorrer = 0f;
+	public Animator miAnimatorUI;
 
 	[Header("Audio")]
 	public AudioClip sonidoMoneda;
@@ -95,9 +96,17 @@ public class Movimiento : MonoBehaviour
 	{
 		if (other.CompareTag("Cartas"))
 		{
+			other.enabled = false; // Para que no cuente doble
 			Cartas++;
 			ActualizarPuntos();
-			Destroy(other.gameObject);
+
+			if (miAnimatorUI != null)
+			{
+				// Fíjate bien: miAnimatorUI es la variable, .Play es la función
+				miAnimatorUI.Play("Carta" + Cartas);
+			}
+
+			Destroy(other.gameObject,10f);
 		}
 
 		if (other.CompareTag("Enemy_01") && vidas > 0)

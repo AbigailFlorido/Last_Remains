@@ -4,7 +4,7 @@ public class Menu : MonoBehaviour
 {
     public void Jugar()
     {
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("SelectorNiveles");
     }
     public void Salir()
     {

@@ -17,6 +17,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo.unity
     guid: d09fb62d543e45d4abb96b4178915e25
+  - enabled: 1
+    path: Assets/Scenes/Nivel 3.unity
+    guid: 9d992ab2dd2cc1e4fa1e04ef330e624f
+  - enabled: 1
+    path: Assets/Scenes/Nivel 2.unity
+    guid: 50c761459cddf064385c536037180e4f
+  - enabled: 1
+    path: Assets/Scenes/Casadentro.unity
+    guid: c19b4407e2b44d642abfca33c3de7b27
+  - enabled: 1
+    path: Assets/Scenes/SelectorNiveles.unity
+    guid: 7297767a3a6ea8447af123e63d60988d
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 667cdeed6a43382438aa65ef90605212
+  - enabled: 1
+    path: Assets/Scenes/NivelCompletado.unity
+    guid: 2c1cb1b2f597f77499af1239b8329b16
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

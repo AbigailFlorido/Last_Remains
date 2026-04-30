@@ -94,18 +94,9 @@ public class Movimiento2 : MonoBehaviour
         }
 
         // Animaciones
-        if (!enSuelo)
-        {
-            animator.Play("Jump");
-        }
-        else if (movimientoX != 0)
-        {
-            animator.Play("Walk");
-        }
-        else
-        {
-            animator.Play("Idle");
-        }
+	    // Animaciones (ELIMINA los if/else de animator.Play)
+	    animator.SetFloat("Speed", Mathf.Abs(movimientoX));
+	    animator.SetBool("isGrounded", enSuelo);
     } // <--- AQUÍ ESTABA EL ERROR (había una llave extra abajo de esta)
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -149,7 +140,7 @@ public class Movimiento2 : MonoBehaviour
 
         if (vidas <= 0)
         {
-            Invoke("ReiniciarNivel", 0.5f);
+            SceneManager.LoadScene("GameOverScene");
         }
 
         Invoke("VolverANormal", tiempoDano);

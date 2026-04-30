@@ -149,8 +149,8 @@ public class Movimiento3 : MonoBehaviour
 
 		if (vidas <= 0)
 		{
-			Invoke("ReiniciarNivel", 0.5f);
-		}
+            SceneManager.LoadScene("GameOverScene");
+        }
 
 		Invoke("VolverANormal", tiempoDano);
 	}

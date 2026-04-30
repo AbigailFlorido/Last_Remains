@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FinalBoss : MonoBehaviour
+public class FinalBoss : MonoBehaviour, IDamageable
 {
     [Header("Configuración")]
     public float velocidad = 1.5f;
@@ -108,10 +108,12 @@ public class FinalBoss : MonoBehaviour
         }
     }
 
-    public void TomarDano(float d)
-    {
-        Vida -= d;
-        if (Vida <= 0)
+	public void TomarDano(float dano)
+	{
+		Vida -= dano; // Tu lógica de vida
+		Debug.Log("Jefe recibió daño. Vida: " + Vida);
+        
+		if (Vida <= 0)
         {
             rb.linearVelocity = Vector2.zero;
             if (animator != null) animator.SetTrigger("DeathFB");

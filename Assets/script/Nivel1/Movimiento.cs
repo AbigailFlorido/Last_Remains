@@ -109,7 +109,7 @@ public class Movimiento : MonoBehaviour
 			Destroy(other.gameObject,12f);
 		}
 
-		if (other.CompareTag("Enemy_01") && vidas > 0)
+		if (other.CompareTag("Enemy") && vidas > 0)
 		{
 			RecibirDano();
 		}

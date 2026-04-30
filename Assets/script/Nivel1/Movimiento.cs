@@ -36,6 +36,7 @@ public class Movimiento : MonoBehaviour
 	public float recuperacion = 2f;
 	public float delayRecuperacion = 12f;
 	private float tiempoSinCorrer = 0f;
+	
 	public Animator miAnimatorUI;
 
 	[Header("Audio")]

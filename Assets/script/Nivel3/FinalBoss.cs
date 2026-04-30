@@ -2,132 +2,120 @@
 
 public class FinalBoss : MonoBehaviour
 {
-	[Header("Configuración de Movimiento3")]
-	public float velocidad = 2f;
-	public float distanciaVision = 8f; // Más grande que el ataque
-	public float attackRange = 1.5f;   // Más corto, para que se acerque
-	public float attackCooldown = 1f;
+    [Header("Configuración")]
+    public float velocidad = 1.5f;
+    public float attackRange = 1.2f;
+    public float distanciaVision = 10f;
+    public float danoQueHace = 1f;
+    public float limiteAltura = 2.0f; // <-- NUEVO: Máxima diferencia de altura para que te vea
 
-	[Header("Detección")]
-	public Transform player;
-	public Transform puntoSuelo;
-	public float distanciaSuelo = 0.5f;
-	public LayerMask capaSuelo;
+    [Header("Detección")]
+    public Transform player;
+    public Transform puntoSuelo;
+    public float distanciaSuelo = 0.5f;
+    public LayerMask capaSuelo;
 
-	private Rigidbody2D rb;
-	private SpriteRenderer spriteRenderer;
-	private int direccion = 1;
-	private float tiempoEspera = 0f;
-	private float nextAttackTime = 0f;
+    private Rigidbody2D rb;
+    private int direccion = 1;
+    private float nextAttackTime = 0f;
+    public float Vida = 300f;
+    private Animator animator;
 
-	private Animator animator;
-	[SerializeField] private float Vida = 10f;
-	private AudioSource fuenteDeAudio;
-	public AudioClip sonidoAplastado;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+        transform.SetParent(null);
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-	void Start()
-	{
-		rb = GetComponent<Rigidbody2D>();
-		// Importante: Asegúrate de que el SpriteRenderer y Animator estén en el objeto o hijos
-		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-		animator = GetComponentInChildren<Animator>();
+        if (rb.sharedMaterial == null)
+        {
+            PhysicsMaterial2D mat = new PhysicsMaterial2D("BossMat");
+            mat.friction = 0f;
+            rb.sharedMaterial = mat;
+        }
+    }
 
-		fuenteDeAudio = GetComponent<AudioSource>();
-		if (fuenteDeAudio == null) fuenteDeAudio = gameObject.AddComponent<AudioSource>();
-	}
+    void FixedUpdate()
+    {
+        if (player == null || Vida <= 0) return;
 
-	void FixedUpdate()
-	{
-		if (player == null || Vida <= 0) return;
+        // Calculamos distancias en ambos ejes
+        float diffX = player.position.x - transform.position.x;
+        float diffY = Mathf.Abs(player.position.y - transform.position.y); // Diferencia de altura
 
-		float distance = Vector2.Distance(transform.position, player.position);
-		bool viendoAlPlayer = distance <= distanciaVision;
-		bool enRangoAtaque = distance <= attackRange;
+        // Distancia real (en diagonal)
+        float distanciaReal = Vector2.Distance(transform.position, player.position);
 
-		// DETECCIÓN DE SUELO Y PAREDES
-		bool haySuelo = Physics2D.Raycast(puntoSuelo.position, Vector2.down, distanciaSuelo, capaSuelo);
-		Vector2 rayOrigin = (Vector2)transform.position + (Vector2.right * direccion * 0.5f);
-		RaycastHit2D hitPared = Physics2D.Raycast(rayOrigin, Vector2.right * direccion, 0.5f, capaSuelo);
+        bool haySuelo = Physics2D.Raycast(puntoSuelo.position, Vector2.down, distanciaSuelo, capaSuelo);
 
-		tiempoEspera -= Time.fixedDeltaTime;
+        // 1. ¿ESTÁ EN RANGO DE VISIÓN Y EN EL MISMO PISO?
+        if (distanciaReal <= distanciaVision && diffY <= limiteAltura)
+        {
+            // Girar
+            if (diffX > 0.2f && direccion == -1) Voltear();
+            else if (diffX < -0.2f && direccion == 1) Voltear();
 
-		if (viendoAlPlayer)
-		{
-			// 1. Determinar dirección hacia el jugador
-			int nuevaDir = player.position.x > transform.position.x ? 1 : -1;
-			if (nuevaDir != direccion) Voltear();
+            // 2. ¿ESTÁ EN RANGO DE ATAQUE?
+            if (distanciaReal <= attackRange)
+            {
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
-			if (enRangoAtaque)
-			{
-				// 2. DETENERSE Y ATACAR
-				rb.linearVelocity = new Vector2(velocidad * direccion, rb.linearVelocity.y);
-				if (Time.time >= nextAttackTime)
-				{
-					Attack();
-					nextAttackTime = Time.time + attackCooldown;
-				}
-			}
-			else
-			{
-				// 3. PERSEGUIR (Solo si hay suelo adelante)
-				if (haySuelo && hitPared.collider == null)
-				{
-					rb.linearVelocity = new Vector2(velocidad * direccion, rb.linearVelocity.y);
-				}
-				else
-				{
-					rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-				}
-			}
-		}
-		else
-		{
-			// 4. MODO PATRULLA
-			if ((!haySuelo || hitPared.collider != null) && tiempoEspera <= 0f)
-			{
-				Voltear();
-				tiempoEspera = 0.5f;
-			}
-			rb.linearVelocity = new Vector2(velocidad * direccion, rb.linearVelocity.y);
-		}
+                if (Time.time >= nextAttackTime)
+                {
+                    if (animator != null) animator.SetTrigger("AttackFB");
+                    HacerDanoAlPlayer();
+                    nextAttackTime = Time.time + 1.5f;
+                }
+            }
+            // 3. PERSEGUIR (Solo si hay suelo adelante)
+            else if (haySuelo)
+            {
+                rb.linearVelocity = new Vector2(velocidad * direccion, rb.linearVelocity.y);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            }
+        }
+        else
+        {
+            // Si el jugador está muy arriba, muy abajo o muy lejos, el jefe se queda quieto
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
 
-		// Actualizar animaciones de caminar (si tienes el parámetro)
-		if (animator != null)
-		{
-			animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-		}
-	}
+        if (animator != null) animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+    }
 
-	void Attack()
-	{
-		Debug.Log("¡ATAQUE!");
-		if (animator != null) animator.SetTrigger("AttackFB");
-	}
+    void Voltear()
+    {
+        direccion *= -1;
+        Vector3 escala = transform.localScale;
+        escala.x = 1.5215f * -direccion;
+        transform.localScale = escala;
+    }
 
-	void Voltear()
-	{
-		direccion *= -1;
-		if (spriteRenderer != null) spriteRenderer.flipX = direccion < 0;
+    void HacerDanoAlPlayer()
+    {
+        // Doble verificación: solo hace daño si al momento del golpe sigues cerca
+        float distanciaAlGolpe = Vector2.Distance(transform.position, player.position);
+        float diffY = Mathf.Abs(player.position.y - transform.position.y);
 
-		if (puntoSuelo != null)
-		{
-			Vector3 pos = puntoSuelo.localPosition;
-			pos.x = Mathf.Abs(pos.x) * direccion;
-			puntoSuelo.localPosition = pos;
-		}
-	}
+        if (distanciaAlGolpe <= attackRange + 0.5f && diffY <= limiteAltura)
+        {
+            player.SendMessage("RecibirDano", danoQueHace, SendMessageOptions.DontRequireReceiver);
+            Debug.Log("Jefe atacando al jugador en el mismo piso");
+        }
+    }
 
-	public void TomarDano(float dano)
-	{
-		Vida -= dano;
-		if (Vida <= 0) Morir();
-	}
-
-	public void Morir()
-	{
-		rb.linearVelocity = Vector2.zero;
-		rb.bodyType = RigidbodyType2D.Static; // Para que no se mueva al morir
-		if (animator != null) animator.SetTrigger("DeathFB");
-		Destroy(gameObject, 1.5f);
-	}
+    public void TomarDano(float d)
+    {
+        Vida -= d;
+        if (Vida <= 0)
+        {
+            rb.linearVelocity = Vector2.zero;
+            if (animator != null) animator.SetTrigger("DeathFB");
+            Destroy(gameObject, 1.5f);
+        }
+    }
 }

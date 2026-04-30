@@ -128,6 +128,6 @@ public class Enemigo : MonoBehaviour
 		rb.linearVelocity = Vector2.zero;
 		rb.bodyType = RigidbodyType2D.Static; // Para que no se mueva al morir
 		if (animator != null) animator.SetTrigger("Death");
-		Destroy(gameObject, 3f);
+		Destroy(gameObject, 1.8f);
 	}
 }

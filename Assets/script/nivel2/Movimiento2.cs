@@ -16,7 +16,7 @@ public class Movimiento2 : MonoBehaviour
     public LayerMask capaSuelo;
     private bool enSuelo = true;
 
-    public int slime;
+	public int Cartas;
     public int vidas = 5;
 
     public TMP_Text textoPuntos;
@@ -38,7 +38,9 @@ public class Movimiento2 : MonoBehaviour
     public AudioClip sonidoMoneda;
     public AudioClip sonidoDano;
     public AudioClip sonidoSalto;
-    private AudioSource fuenteDeAudio;
+	private AudioSource fuenteDeAudio;
+    
+	public Animator miAnimatorUI;
 
     void Start()
     {
@@ -99,15 +101,23 @@ public class Movimiento2 : MonoBehaviour
 	    animator.SetBool("isGrounded", enSuelo);
     } // <--- AQUÍ ESTABA EL ERROR (había una llave extra abajo de esta)
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.name == "slime")
-        {
-            slime = slime + 1;
-            ActualizarPuntos();
-            fuenteDeAudio.PlayOneShot(sonidoMoneda);
-            Destroy(other.gameObject);
-        }
+   
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Cartas"))
+		{
+			other.enabled = false; // Para que no cuente doble
+			Cartas++;
+			ActualizarPuntos();
+
+			if (miAnimatorUI != null)
+			{
+				// Fíjate bien: miAnimatorUI es la variable, .Play es la función
+				miAnimatorUI.Play("Carta" + 3 + Cartas);
+			}
+
+			Destroy(other.gameObject,12f);
+		}
 
         if (other.CompareTag("Enemy_01") && vidas > 0)
         {
@@ -168,7 +178,7 @@ public class Movimiento2 : MonoBehaviour
     void ActualizarPuntos()
     {
         if (textoPuntos != null)
-            textoPuntos.text = "Slime: " + slime;
+	        textoPuntos.text = "Cartas: " + Cartas;
     }
 
     void OnDrawGizmosSelected()

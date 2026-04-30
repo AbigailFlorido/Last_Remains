@@ -39,7 +39,9 @@ public class Movimiento : MonoBehaviour
     public AudioClip sonidoMoneda;
     public AudioClip sonidoDano;
     public AudioClip sonidoSalto;
-    private AudioSource fuenteDeAudio;
+	private AudioSource fuenteDeAudio;
+    
+	public Animator miAnimatorUI;
 
     void Start()
     {
@@ -96,14 +98,25 @@ public class Movimiento : MonoBehaviour
         animator.SetBool("isGrounded", enSuelo);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Cartas")
-        {
-            Cartas = Cartas + 1;
-            ActualizarPuntos();
-            Destroy(other.gameObject);
-        }
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Cartas"))
+		{
+			other.enabled = false; // Para que no cuente doble
+			Cartas++;
+			ActualizarPuntos();
+
+			if (miAnimatorUI != null)
+			{
+				// Fíjate bien: miAnimatorUI es la variable, .Play es la función
+				miAnimatorUI.Play("Carta" + Cartas);
+			}
+
+			Destroy(other.gameObject,10f);
+		}
+	
+	
+	
 
         if (other.CompareTag("Enemy_01") && vidas > 0)
         {

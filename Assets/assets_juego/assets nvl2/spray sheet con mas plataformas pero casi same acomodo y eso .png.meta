@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: f1853f292039fd14c95acb6018c260d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2931225751281431345
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _0
+  - first:
+      213: -8142446571302116183
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _1
+  - first:
+      213: -6269810753264652444
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _2
+  - first:
+      213: 8056561937391598874
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _3
+  - first:
+      213: -7122725718137779720
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _4
+  - first:
+      213: 2169906443809410043
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _5
+  - first:
+      213: 6700169154884625780
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _6
+  - first:
+      213: -7239535527304101753
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _7
+  - first:
+      213: 490000008808958237
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _8
+  - first:
+      213: -6519889724449377463
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _9
+  - first:
+      213: 2755225665051991064
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _10
+  - first:
+      213: -4522889358815912735
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _11
+  - first:
+      213: -5865267869088221230
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _12
+  - first:
+      213: -5539653317103034267
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _13
+  - first:
+      213: 4399341639829092549
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _14
+  - first:
+      213: -3678531632947221246
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _15
+  - first:
+      213: 4430225616968172196
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _16
+  - first:
+      213: -1052289740865396570
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _17
+  - first:
+      213: -4358768121094747058
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _18
+  - first:
+      213: -5112332089747070967
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _19
+  - first:
+      213: -794333762052497098
+    second: spray sheet con mas plataformas pero casi same acomodo y eso _20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.010456812, y: 0.17285918}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _0
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 437
+        width: 218
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc8462a5b13257d0800000000000000
+      internalID: -2931225751281431345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _1
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 485
+        width: 218
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4a0f2ebf7300f80800000000000000
+      internalID: -8142446571302116183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _2
+      rect:
+        serializedVersion: 2
+        x: 7781
+        y: 209
+        width: 734
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f6cbab6582df8a0800000000000000
+      internalID: -6269810753264652444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _3
+      rect:
+        serializedVersion: 2
+        x: 8633
+        y: 491
+        width: 272
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1db8258568aecf60800000000000000
+      internalID: 8056561937391598874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _4
+      rect:
+        serializedVersion: 2
+        x: 13145
+        y: 209
+        width: 679
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9cbd972bef62d90800000000000000
+      internalID: -7122725718137779720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _5
+      rect:
+        serializedVersion: 2
+        x: 3923
+        y: 413
+        width: 254
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfb471bf96e0d1e10800000000000000
+      internalID: 2169906443809410043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _6
+      rect:
+        serializedVersion: 2
+        x: 5801
+        y: 425
+        width: 344
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4756debe858cbfc50800000000000000
+      internalID: 6700169154884625780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _7
+      rect:
+        serializedVersion: 2
+        x: 6443
+        y: 197
+        width: 734
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780083c6bc0088b90800000000000000
+      internalID: -7239535527304101753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _8
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 425
+        width: 344
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d190ff07964dcc600800000000000000
+      internalID: 490000008808958237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _9
+      rect:
+        serializedVersion: 2
+        x: 9317
+        y: 425
+        width: 344
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943b977e6d2b485a0800000000000000
+      internalID: -6519889724449377463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _10
+      rect:
+        serializedVersion: 2
+        x: 9725
+        y: 209
+        width: 638
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c967105278c3620800000000000000
+      internalID: 2755225665051991064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _11
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 215
+        width: 458
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec126967187b31c0800000000000000
+      internalID: -4522889358815912735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _12
+      rect:
+        serializedVersion: 2
+        x: 3161
+        y: 221
+        width: 458
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7fb76d2f16a9ea0800000000000000
+      internalID: -5865267869088221230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _13
+      rect:
+        serializedVersion: 2
+        x: 3683
+        y: 359
+        width: 206
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560624f88a23f13b0800000000000000
+      internalID: -5539653317103034267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _14
+      rect:
+        serializedVersion: 2
+        x: 8741
+        y: 203
+        width: 458
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8f897a9e99d0d30800000000000000
+      internalID: 4399341639829092549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _15
+      rect:
+        serializedVersion: 2
+        x: 10925
+        y: 203
+        width: 890
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20da42338fa33fcc0800000000000000
+      internalID: -3678531632947221246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 215
+        width: 793
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2493ee9b25b7d30800000000000000
+      internalID: 4430225616968172196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _17
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 209
+        width: 482
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a02ee25e048561f0800000000000000
+      internalID: -1052289740865396570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _18
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 209
+        width: 476
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4cc9d3dc7b8283c0800000000000000
+      internalID: -4358768121094747058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _19
+      rect:
+        serializedVersion: 2
+        x: 4625
+        y: 203
+        width: 1292
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 900abc8fc095d09b0800000000000000
+      internalID: -5112332089747070967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spray sheet con mas plataformas pero casi same acomodo y eso _20
+      rect:
+        serializedVersion: 2
+        x: 11897
+        y: 215
+        width: 368
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 631e2c7e6a5f9f4f0800000000000000
+      internalID: -794333762052497098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      spray sheet con mas plataformas pero casi same acomodo y eso _0: -2931225751281431345
+      spray sheet con mas plataformas pero casi same acomodo y eso _1: -8142446571302116183
+      spray sheet con mas plataformas pero casi same acomodo y eso _10: 2755225665051991064
+      spray sheet con mas plataformas pero casi same acomodo y eso _11: -4522889358815912735
+      spray sheet con mas plataformas pero casi same acomodo y eso _12: -5865267869088221230
+      spray sheet con mas plataformas pero casi same acomodo y eso _13: -5539653317103034267
+      spray sheet con mas plataformas pero casi same acomodo y eso _14: 4399341639829092549
+      spray sheet con mas plataformas pero casi same acomodo y eso _15: -3678531632947221246
+      spray sheet con mas plataformas pero casi same acomodo y eso _16: 4430225616968172196
+      spray sheet con mas plataformas pero casi same acomodo y eso _17: -1052289740865396570
+      spray sheet con mas plataformas pero casi same acomodo y eso _18: -4358768121094747058
+      spray sheet con mas plataformas pero casi same acomodo y eso _19: -5112332089747070967
+      spray sheet con mas plataformas pero casi same acomodo y eso _2: -6269810753264652444
+      spray sheet con mas plataformas pero casi same acomodo y eso _20: -794333762052497098
+      spray sheet con mas plataformas pero casi same acomodo y eso _3: 8056561937391598874
+      spray sheet con mas plataformas pero casi same acomodo y eso _4: -7122725718137779720
+      spray sheet con mas plataformas pero casi same acomodo y eso _5: 2169906443809410043
+      spray sheet con mas plataformas pero casi same acomodo y eso _6: 6700169154884625780
+      spray sheet con mas plataformas pero casi same acomodo y eso _7: -7239535527304101753
+      spray sheet con mas plataformas pero casi same acomodo y eso _8: 490000008808958237
+      spray sheet con mas plataformas pero casi same acomodo y eso _9: -6519889724449377463
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

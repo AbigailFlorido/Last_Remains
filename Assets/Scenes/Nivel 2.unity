@@ -219,8 +219,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 498012366149640977, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18355517
+      objectReference: {fileID: 0}
+    - target: {fileID: 498012366149640977, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18354353
+      objectReference: {fileID: 0}
+    - target: {fileID: 498012366149640977, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.18354353
+      objectReference: {fileID: 0}
+    - target: {fileID: 498012366149640977, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.007
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 498012366149640977, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.331
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187956018480906293, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
+      propertyPath: Vida
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1187956018480906293, guid: 0a6372f9bcc9cae4dada8ff8f7ef1283, type: 3}
       propertyPath: player
@@ -2453,7 +2473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraStamina
   barra: {fileID: 538764403}
-  movimiento: {fileID: 1171119652}
+  movimiento: {fileID: 0}
 --- !u!114 &876815639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3149,10 +3169,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1171119656}
+  - component: {fileID: 1171119658}
   - component: {fileID: 1171119655}
   - component: {fileID: 1171119654}
   - component: {fileID: 1171119653}
-  - component: {fileID: 1171119652}
   - component: {fileID: 1171119657}
   - component: {fileID: 1171119650}
   - component: {fileID: 1171119649}
@@ -3275,40 +3295,6 @@ MonoBehaviour:
   controladorGolpe: {fileID: 1379458681}
   radioGolpe: 1
   danoGolpe: 20
---- !u!114 &1171119652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171119648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be1e9fcd5d6afb49a1b1daeddc38544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  velocidad: 4
-  velocidadCarrera: 8
-  fuerzaSalto: 5.5
-  groundCheck: {fileID: 190634347}
-  radioGroundCheck: 0.5
-  capaSuelo:
-    serializedVersion: 2
-    m_Bits: 64
-  Cartas: 0
-  vidas: 5
-  textoPuntos: {fileID: 185276399}
-  tiempoDano: 0.5
-  fuerzaEmpujeX: 4
-  fuerzaEmpujeY: 3
-  staminaMax: 5
-  staminaActual: 0
-  gastoStamina: 1
-  recuperacion: 0.5
-  delayRecuperacion: 1
-  sonidoMoneda: {fileID: 8300000, guid: 386b599ec82a5e94e8136e6ec5de951a, type: 3}
-  sonidoDano: {fileID: 8300000, guid: dcf3183b58d192946a6eaa6b14626478, type: 3}
-  sonidoSalto: {fileID: 8300000, guid: bff4ae2788c770d419c67dc6d4bec2c6, type: 3}
 --- !u!50 &1171119653
 Rigidbody2D:
   serializedVersion: 5
@@ -3453,6 +3439,40 @@ MonoBehaviour:
   Bala2Prefab: {fileID: 3717560066108214442, guid: 0ce0083beb93a2e45ae391cfc9303c10, type: 3}
   controladorDisparo: {fileID: 1379458681}
   Bala2: {fileID: 3717560066108214442, guid: 0ce0083beb93a2e45ae391cfc9303c10, type: 3}
+--- !u!114 &1171119658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171119648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e74840aaa64684e9bdcde2cb80753a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movimiento2
+  velocidad: 4
+  velocidadCarrera: 8
+  fuerzaSalto: 5.5
+  groundCheck: {fileID: 190634347}
+  radioGroundCheck: 0.2
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 64
+  slime: 0
+  vidas: 5
+  textoPuntos: {fileID: 0}
+  tiempoDano: 0.5
+  fuerzaEmpujeX: 4
+  fuerzaEmpujeY: 3
+  staminaMax: 5
+  staminaActual: 0
+  gastoStamina: 1
+  recuperacion: 2
+  delayRecuperacion: 12
+  sonidoMoneda: {fileID: 0}
+  sonidoDano: {fileID: 0}
+  sonidoSalto: {fileID: 0}
 --- !u!1 &1379458680
 GameObject:
   m_ObjectHideFlags: 0

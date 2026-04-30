@@ -115,7 +115,7 @@ public class FinalBoss : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             if (animator != null) animator.SetTrigger("DeathFB");
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject, 1.8f);
         }
     }
 }
